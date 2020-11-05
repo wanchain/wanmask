@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 80 78" style="enable-background:new 0 0 80 78;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st1{fill:none;stroke:#38393A;stroke-width:3;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#38393A;}
+	.st3{fill:#38393A;}
+</style>
+<circle class="st0" cx="34" cy="34" r="34"/>
+<circle class="st1" cx="34" cy="34" r="32.5"/>
+<g transform="translate(46 44)">
+	<circle class="st0" cx="17" cy="17" r="17"/>
+	<circle class="st1" cx="17" cy="17" r="15.5"/>
+	<path class="st2" d="M19.1,15.4h6.4v4.2h-6.4V26h-4.2v-6.4H8.5v-4.2h6.4V9h4.2V15.4z"/>
+</g>
+<g>
+	<polygon class="st3" points="34.7,32.5 19,41.8 19,46.9 34.7,37.6 50.5,46.9 50.5,41.8 	"/>
+	<polygon class="st3" points="23.6,26.9 34.8,20.4 45.9,26.9 50.1,25.2 34.8,16.3 19.4,25.2 	"/>
+	<polygon class="st3" points="45.9,27.9 45.9,42.2 44.3,43.2 47.8,45.2 50.5,43.7 50.5,26.1 	"/>
+	<polygon class="st3" points="25.2,43.2 23.6,42.2 23.6,27.9 19,26.1 19,43.7 21.7,45.2 	"/>
+	<polygon class="st3" points="43.3,43.7 34.8,48.7 26.2,43.7 22.7,45.8 34.8,52.8 46.8,45.8 	"/>
+</g>
+</svg>
