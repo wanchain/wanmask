@@ -164,6 +164,7 @@ export default class MetamaskController extends EventEmitter {
       provider: this.provider,
       blockTracker: this.blockTracker,
       network: this.networkController,
+      mmc: this,
     })
 
     // start and stop polling for balances based on activeControllerConnections
