@@ -120,6 +120,12 @@ class AccountList extends Component {
       return device.slice(0, 1).toUpperCase() + device.slice(1)
     }
 
+    UNSAFE_componentWillMount = () => {
+      if (!this.props.selectedAccount && this.props.accounts.length > 0) {
+        this.props.onAccountChange('0');
+      }
+    }
+
     renderHeader () {
       const { device } = this.props
       return (
