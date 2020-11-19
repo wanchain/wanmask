@@ -31,7 +31,7 @@ export default class TransactionActivityLog extends PureComponent {
     const { metamaskNetworkId } = primaryTransaction
 
     const prefix = getEtherscanNetworkPrefix(metamaskNetworkId)
-    const etherscanUrl = `https://${prefix}wanscan.org/tx/${hash}`
+    const etherscanUrl = `https://${!prefix.length ? 'www.' : prefix}wanscan.org/tx/${hash}`
 
     global.platform.openTab({ url: etherscanUrl })
   }

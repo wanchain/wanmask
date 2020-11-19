@@ -13,6 +13,7 @@ import migration10 from '../../../app/scripts/migrations/010'
 import migration11 from '../../../app/scripts/migrations/011'
 import migration12 from '../../../app/scripts/migrations/012'
 import migration13 from '../../../app/scripts/migrations/013'
+import {MAINNET, TESTNET} from '../../../app/scripts/controllers/network/enums'
 
 let vault5, vault6, vault7, vault8, vault9 // vault10, vault11
 

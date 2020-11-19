@@ -413,11 +413,13 @@ describe('Send Component', function () {
 
     it('should validate when input changes and has error', function () {
       const instance = wrapper.instance()
-      instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510')
+      // instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510')
+      instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510ff')
 
       clock.tick(1001)
       assert.deepEqual(instance.state, {
-        query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510',
+        // query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510',
+        query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510ff',
         toError: 'invalidAddressRecipient',
         toWarning: null,
       })
@@ -426,11 +428,13 @@ describe('Send Component', function () {
     it('should validate when input changes and has error on a bad network', function () {
       wrapper.setProps({ network: 'bad' })
       const instance = wrapper.instance()
-      instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510')
+      // instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510')
+      instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510ff')
 
       clock.tick(1001)
       assert.deepEqual(instance.state, {
-        query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510',
+        // query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510',
+        query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510ff',
         toError: 'invalidAddressRecipientNotEthNetwork',
         toWarning: null,
       })
@@ -439,11 +443,13 @@ describe('Send Component', function () {
     it('should synchronously validate when input changes to ""', function () {
       wrapper.setProps({ network: 'bad' })
       const instance = wrapper.instance()
-      instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510')
+      // instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510')
+      instance.onRecipientInputChange('0x80F061544cC398520615B5d3e7a3BedD70cd4510ff')
 
       clock.tick(1001)
       assert.deepEqual(instance.state, {
-        query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510',
+        // query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510',
+        query: '0x80F061544cC398520615B5d3e7a3BedD70cd4510ff',
         toError: 'invalidAddressRecipientNotEthNetwork',
         toWarning: null,
       })
@@ -459,12 +465,12 @@ describe('Send Component', function () {
     it('should warn when send to a known token contract address', function () {
       wrapper.setProps({ address: '0x888', decimals: 18, symbol: '888' })
       const instance = wrapper.instance()
-      instance.onRecipientInputChange('0x13CB85823F78cFF38F0b0e90d3E975B8cb3aaD64')
+      instance.onRecipientInputChange('0x3BEB80170272f07aCA12987AF86A59888255A807')
       // 0x13cb85823f78Cff38f0B0E90D3e975b8CB3AAd64
 
       clock.tick(1001)
       assert.deepEqual(instance.state, {
-        query: '0x13CB85823F78cFF38F0b0e90d3E975B8cb3aaD64',
+        query: '0x3BEB80170272f07aCA12987AF86A59888255A807',
         toError: null,
         toWarning: 'knownAddressRecipient',
       })

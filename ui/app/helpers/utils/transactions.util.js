@@ -240,5 +240,5 @@ export function getBlockExplorerUrlForTx (networkId, hash, rpcPrefs = {}) {
     return `${rpcPrefs.blockExplorerUrl.replace(/\/+$/, '')}/tx/${hash}`
   }
   const prefix = getEtherscanNetworkPrefix(networkId)
-  return `https://${prefix}wanscan.org/tx/${hash}`
+  return `https://${!prefix.length ? 'www.' : prefix}wanscan.org/tx/${hash}`
 }

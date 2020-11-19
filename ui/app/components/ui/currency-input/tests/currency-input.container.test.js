@@ -1,5 +1,6 @@
 import assert from 'assert'
 import proxyquire from 'proxyquire'
+import {MAINNET, TESTNET} from '../../../../../../app/scripts/controllers/network/enums'
 
 let mapStateToProps, mergeProps
 
@@ -28,7 +29,7 @@ describe('CurrencyInput container', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
             send: {
               maxModeOn: false,
@@ -55,7 +56,7 @@ describe('CurrencyInput container', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'rinkeby',
+              type: TESTNET,
             },
             send: {
               maxModeOn: false,
@@ -82,7 +83,7 @@ describe('CurrencyInput container', function () {
               showFiatInTestnets: true,
             },
             provider: {
-              type: 'rinkeby',
+              type: TESTNET,
             },
             send: {
               maxModeOn: false,
@@ -109,7 +110,7 @@ describe('CurrencyInput container', function () {
               showFiatInTestnets: true,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
             send: {
               maxModeOn: false,

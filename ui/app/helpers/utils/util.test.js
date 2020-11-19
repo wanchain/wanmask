@@ -80,7 +80,7 @@ describe('util', function () {
     })
 
     it('should recognize incorrect capitalized checksum', function () {
-      const address = '0xFDea65C8e26263F6d9A1B5de9555D2931A33b825'
+      const address = '0xFDea65C8e26263F6d9A1B5de9555D2931A33b825ffff'
       const result = util.isValidAddress(address)
       assert.ok(!result)
     })

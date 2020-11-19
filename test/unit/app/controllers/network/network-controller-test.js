@@ -2,6 +2,7 @@ import assert from 'assert'
 import nock from 'nock'
 import NetworkController from '../../../../../app/scripts/controllers/network'
 import { getNetworkDisplayName } from '../../../../../app/scripts/controllers/network/util'
+import { MAINNET, TESTNET} from '../../../../../app/scripts/controllers/network/enums'
 
 describe('NetworkController', function () {
   describe('controller2', function () {
@@ -52,13 +53,13 @@ describe('NetworkController', function () {
     describe('#setProviderType', function () {
       it('should update provider.type', function () {
         networkController.initializeProvider(networkControllerProviderConfig)
-        networkController.setProviderType('mainnet')
+        networkController.setProviderType(MAINNET)
         const type = networkController.getProviderConfig().type
-        assert.equal(type, 'mainnet', 'provider type is updated')
+        assert.equal(type, MAINNET, 'provider type is updated')
       })
       it('should set the network to loading', function () {
         networkController.initializeProvider(networkControllerProviderConfig)
-        networkController.setProviderType('mainnet')
+        networkController.setProviderType(MAINNET)
         const loading = networkController.isNetworkLoading()
         assert.ok(loading, 'network is loading')
       })
@@ -111,10 +112,10 @@ describe('NetworkController', function () {
           input: '3',
           expected: 'Testnet Wanchain Network',
         }, {
-          input: 'mainnet',
+          input: MAINNET,
           expected: 'Main Wanchain Network',
         }, {
-          input: 'testnet',
+          input: TESTNET,
           expected: 'Testnet Wanchain Network',
         },
       ]

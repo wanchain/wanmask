@@ -25,7 +25,7 @@ export default function getAccountLink (address, network, rpcPrefs) {
     //   link = `https://goerli.wanscan.org/address/${address}`
     //   break
     case 1: // main net
-      link = `https://wanscan.org/address/${address}`
+      link = `https://www.wanscan.org/address/${address}`
       break
     case 3: // wanchain testnet
       link = `https://testnet.wanscan.org/address/${address}`

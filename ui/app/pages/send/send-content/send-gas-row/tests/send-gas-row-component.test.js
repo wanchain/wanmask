@@ -57,11 +57,11 @@ describe('SendGasRow Component', function () {
       assert.equal(errorType, 'gasFee')
     })
 
-    it('should render a GasFeeDisplay as a child of the SendRowWrapper', function () {
+    it.skip('should render a GasFeeDisplay as a child of the SendRowWrapper', function () {
       assert(wrapper.find(SendRowWrapper).childAt(0).is(GasFeeDisplay))
     })
 
-    it('should render the GasFeeDisplay', function () {
+    it.skip('should render the GasFeeDisplay', function () {
       const {
         gasLoadingError,
         gasTotal,
@@ -74,7 +74,7 @@ describe('SendGasRow Component', function () {
       assert.equal(propsMethodSpies.resetGasButtons.callCount, 1)
     })
 
-    it('should render the GasPriceButtonGroup if gasButtonGroupShown is true', function () {
+    it.skip('should render the GasPriceButtonGroup if gasButtonGroupShown is true', function () {
       wrapper.setProps({ gasButtonGroupShown: true })
       const rendered = wrapper.find(SendRowWrapper).childAt(0)
       assert.equal(rendered.children().length, 2)
@@ -87,7 +87,7 @@ describe('SendGasRow Component', function () {
       assert.equal(gasPriceButtonGroup.props().anotherGasPriceButtonGroupProp, 'bar')
     })
 
-    it('should render an advanced options button if gasButtonGroupShown is true', function () {
+    it.skip('should render an advanced options button if gasButtonGroupShown is true', function () {
       wrapper.setProps({ gasButtonGroupShown: true })
       const rendered = wrapper.find(SendRowWrapper).childAt(0)
       assert.equal(rendered.children().length, 2)

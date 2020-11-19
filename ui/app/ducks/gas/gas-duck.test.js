@@ -7,6 +7,7 @@ const fakeLocalStorage = {}
 const GasDuck = proxyquire('./gas.duck.js', {
   '../../../lib/local-storage-helpers': fakeLocalStorage,
 })
+import {MAINNET, TESTNET} from '../../../../app/scripts/controllers/network/enums'
 
 const {
   basicGasEstimatesLoadingStarted,
@@ -417,7 +418,7 @@ describe('Gas Duck', function () {
         initState,
         { basicPriceAndTimeEstimatesLastRetrieved: 1000000 },
       ),
-      metamask: { provider: { type: 'testnet' } },
+      metamask: { provider: { type: TESTNET } },
       }))
       assert.deepEqual(
         mockDistpatch.getCall(0).args,
@@ -484,7 +485,7 @@ describe('Gas Duck', function () {
         initState,
         {},
       ),
-      metamask: { provider: { type: 'testnet' } },
+      metamask: { provider: { type: TESTNET } },
       }))
       assert.deepEqual(
         mockDistpatch.getCall(0).args,
@@ -528,7 +529,7 @@ describe('Gas Duck', function () {
         initState,
         {},
       ),
-      metamask: { provider: { type: 'testnet' } },
+      metamask: { provider: { type: TESTNET } },
       }))
       assert.deepEqual(
         mockDistpatch.getCall(0).args,
@@ -579,7 +580,7 @@ describe('Gas Duck', function () {
         initState,
         { priceAndTimeEstimatesLastRetrieved: 1000000 },
       ),
-      metamask: { provider: { type: 'testnet' } },
+      metamask: { provider: { type: TESTNET } },
       }))
       assert.deepEqual(
         mockDistpatch.getCall(0).args,
@@ -623,7 +624,7 @@ describe('Gas Duck', function () {
           }],
         },
       ),
-      metamask: { provider: { type: 'testnet' } },
+      metamask: { provider: { type: TESTNET } },
       }))
       assert.deepEqual(
         mockDistpatch.getCall(0).args,

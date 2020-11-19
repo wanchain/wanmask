@@ -1,3 +1,4 @@
+import {MAINNET, TESTNET} from '../../../../app/scripts/controllers/network/enums'
 const state = {
   'metamask': {
     'isInitialized': true,
@@ -151,7 +152,7 @@ const state = {
     ],
     'selectedAddress': '0xd85a4b6a394794842887b8284293d69163007bbb',
     'provider': {
-      'type': 'testnet',
+      'type': TESTNET,
     },
     'send': {
       'gasLimit': '0xFFFF',

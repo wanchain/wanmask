@@ -1,5 +1,6 @@
 import assert from 'assert'
 import proxyquire from 'proxyquire'
+import {MAINNET, TESTNET} from '../../../../app/scripts/controllers/network/enums'
 
 const {
   getCustomGasErrors,
@@ -106,7 +107,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
           },
           gas: {
@@ -159,7 +160,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
           },
           gas: {
@@ -212,7 +213,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'rinkeby',
+              type: TESTNET,
             },
           },
           gas: {
@@ -265,7 +266,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: true,
             },
             provider: {
-              type: 'rinkeby',
+              type: TESTNET,
             },
           },
           gas: {
@@ -318,7 +319,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: true,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
           },
           gas: {
@@ -382,7 +383,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
           },
           gas: {
@@ -432,7 +433,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
           },
           gas: {
@@ -482,7 +483,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: false,
             },
             provider: {
-              type: 'rinkeby',
+              type: TESTNET,
             },
           },
           gas: {
@@ -532,7 +533,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: true,
             },
             provider: {
-              type: 'rinkeby',
+              type: TESTNET,
             },
           },
           gas: {
@@ -582,7 +583,7 @@ describe('custom-gas selectors', function () {
               showFiatInTestnets: true,
             },
             provider: {
-              type: 'mainnet',
+              type: MAINNET,
             },
           },
           gas: {

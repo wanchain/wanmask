@@ -59,7 +59,7 @@ describe('Transactions utils', function () {
     it('should return the correct block explorer url for a transaction', function () {
       const tests = [
         {
-          expected: 'https://wanscan.org/tx/0xabcd',
+          expected: 'https://www.wanscan.org/tx/0xabcd',
           networkId: '1',
           hash: '0xabcd',
         },

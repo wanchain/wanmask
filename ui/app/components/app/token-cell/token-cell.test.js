@@ -9,6 +9,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 import TokenCell from '.'
 import Identicon from '../../ui/identicon'
+import {MAINNET, TESTNET} from '../../../../../app/scripts/controllers/network/enums'
 
 describe('Token Cell', function () {
   let wrapper
@@ -25,7 +26,7 @@ describe('Token Cell', function () {
       provider: {
         chainId: '1',
         ticker: 'WAN',
-        type: 'mainnet',
+        type: MAINNET,
       },
     },
     appState: {

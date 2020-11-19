@@ -1,6 +1,7 @@
 import assert from 'assert'
 import proxyquire from 'proxyquire'
 import sinon from 'sinon'
+import {MAINNET, TESTNET} from '../../../../../../../app/scripts/controllers/network/enums'
 
 let mapStateToProps
 let mapDispatchToProps
@@ -79,7 +80,7 @@ describe('gas-modal-page-container container', function () {
             showFiatInTestnets: false,
           },
           provider: {
-            type: 'mainnet',
+            type: MAINNET,
           },
           currentNetworkTxList: [{
             id: 34,
@@ -191,7 +192,7 @@ describe('gas-modal-page-container container', function () {
               },
               provider: {
                 ...baseMockState.metamask.provider,
-                type: 'testnet',
+                type: TESTNET,
               },
             },
           }),
@@ -215,7 +216,7 @@ describe('gas-modal-page-container container', function () {
               },
               provider: {
                 ...baseMockState.metamask.provider,
-                type: 'mainnet',
+                type: MAINNET,
               },
             },
           }),

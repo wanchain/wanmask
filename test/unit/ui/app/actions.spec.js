@@ -167,8 +167,8 @@ describe('Actions', function () {
 
       createNewVaultAndRestoreSpy = sinon.stub(background, 'createNewVaultAndRestore')
 
-      createNewVaultAndRestoreSpy.callsFake((_, __, callback) => {
-        callback(new Error('error'))
+      createNewVaultAndRestoreSpy.callsFake((...args) => {
+        args[3](new Error('error'))
       })
 
       try {
@@ -563,7 +563,7 @@ describe('Actions', function () {
     let signMessageSpy, metamaskMsgs, msgId, messages
 
     const msgParams = {
-      from: '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc',
+      from: '0xb35991fdc8300270d7fa9dcc8823d9be93273906',
       data: '0x879a053d4800c6354e76c7985a865d2922c82fb5b3f4577b2fe08b998954f2e0',
     }
 
@@ -616,7 +616,7 @@ describe('Actions', function () {
     let signPersonalMessageSpy, metamaskMsgs, msgId, personalMessages
 
     const msgParams = {
-      from: '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc',
+      from: '0xb35991fdc8300270d7fa9dcc8823d9be93273906',
       data: '0x879a053d4800c6354e76c7985a865d2922c82fb5b3f4577b2fe08b998954f2e0',
     }
 
@@ -1156,13 +1156,15 @@ describe('Actions', function () {
       const expectedActions = [
         { type: 'SHOW_LOADING_INDICATION', value: undefined },
         { type: 'HIDE_LOADING_INDICATION' },
-        { type: 'SHOW_PRIVATE_KEY', value: '7ec73b91bb20f209a7ff2d32f542c3420b4fccf14abcc7840d2eff0ebcb18505' },
+        // { type: 'SHOW_PRIVATE_KEY', value: '7ec73b91bb20f209a7ff2d32f542c3420b4fccf14abcc7840d2eff0ebcb18505' },
+        { type: 'SHOW_PRIVATE_KEY', value: 'a5aeebe80384c3ff293b9bc309151a0fb42f3fc8039995c153d93f7c65b0c63d' },
       ]
 
       submitPasswordSpy = sinon.spy(background, 'submitPassword')
       exportAccountSpy = sinon.spy(background, 'exportAccount')
 
-      await store.dispatch(actions.exportAccount(password, '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc'))
+      // await store.dispatch(actions.exportAccount(password, '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc'))
+      await store.dispatch(actions.exportAccount(password, '0xb35991fdc8300270d7fa9dcc8823d9be93273906'))
       assert(submitPasswordSpy.calledOnce)
       assert(exportAccountSpy.calledOnce)
       assert.deepEqual(store.getActions(), expectedActions)

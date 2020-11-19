@@ -62,7 +62,7 @@ export function addressSummary (address, firstSegLength = 10, lastSegLength = 4,
 }
 
 export function isValidAddress (_address) {
-  const address = _address.toLowerCase()
+  const address = _address ? _address.toLowerCase() : null
   if (!address || address === '0x0000000000000000000000000000000000000000') {
     return false
   }

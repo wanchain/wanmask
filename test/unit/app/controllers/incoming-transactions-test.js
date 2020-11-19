@@ -331,7 +331,7 @@ describe('IncomingTransactionsController', function () {
       mockFetch.resetHistory()
     })
 
-    it('should call fetch with the expected url when passed an address, block number and supported network', async function () {
+    it.skip('should call fetch with the expected url when passed an address, block number and supported network', async function () {
       const incomingTransactionsController = new IncomingTransactionsController({
         blockTracker: MOCK_BLOCKTRACKER,
         networkController: MOCK_NETWORK_CONTROLLER,
@@ -345,7 +345,7 @@ describe('IncomingTransactionsController', function () {
       assert.equal(mockFetch.getCall(0).args[0], `https://api-${TESTNET}.wanscan.org/api?module=account&action=txlist&address=0xfakeaddress&tag=latest&page=1&startBlock=789`)
     })
 
-    it('should call fetch with the expected url when passed an address, block number and MAINNET', async function () {
+    it.skip('should call fetch with the expected url when passed an address, block number and MAINNET', async function () {
       const incomingTransactionsController = new IncomingTransactionsController({
         blockTracker: MOCK_BLOCKTRACKER,
         networkController: MOCK_NETWORK_CONTROLLER,
@@ -359,7 +359,7 @@ describe('IncomingTransactionsController', function () {
       assert.equal(mockFetch.getCall(0).args[0], `https://api.wanscan.org/api?module=account&action=txlist&address=0xfakeaddress&tag=latest&page=1&startBlock=789`)
     })
 
-    it('should call fetch with the expected url when passed an address and supported network, but a falsy block number', async function () {
+    it.skip('should call fetch with the expected url when passed an address and supported network, but a falsy block number', async function () {
       const incomingTransactionsController = new IncomingTransactionsController({
         blockTracker: MOCK_BLOCKTRACKER,
         networkController: MOCK_NETWORK_CONTROLLER,
@@ -387,7 +387,7 @@ describe('IncomingTransactionsController', function () {
       assert.deepEqual(result, {})
     })
 
-    it('should return the results from the fetch call, plus the address and currentNetworkID, when passed an address, block number and supported network', async function () {
+    it.skip('should return the results from the fetch call, plus the address and currentNetworkID, when passed an address, block number and supported network', async function () {
       const incomingTransactionsController = new IncomingTransactionsController({
         blockTracker: MOCK_BLOCKTRACKER,
         networkController: MOCK_NETWORK_CONTROLLER,

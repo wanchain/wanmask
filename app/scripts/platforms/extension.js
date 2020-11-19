@@ -4,7 +4,19 @@ import { getEnvironmentType, checkForError } from '../lib/util'
 import { ENVIRONMENT_TYPE_BACKGROUND } from '../lib/enums'
 
 const explorerLink = function (hash, network) {
-  return `https://wanscan.org/tx/${hash}`
+  let link
+  switch (network) {
+    case 1: // main net
+      link = `https://www.wanscan.org/tx/${hash}`
+      break
+    case 3: // wanchain testnet
+      link = `https://testnet.wanscan.org/tx/${hash}`
+      break
+    default:
+      link = ''
+      break
+  }
+  return link
 }
 
 export default class ExtensionPlatform {

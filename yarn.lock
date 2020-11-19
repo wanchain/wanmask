@@ -2736,10 +2736,10 @@
   resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.17.0.tgz#1fbfb28e84f29eeb21fe6e798bd825ac58c4db31"
   integrity sha512-6p10qRCLdlN+79bdABFQ4Gy+wq4Tttg8WtFB8b9y7uMfLin8m9bWz3B5DhwHfJ5RRjunLQziw/rBYPomXwr/4A==
 
-"@wanchainmask/wan-trezor-keyring@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.0.tgz#254e1e721b75762c4d740b0541031d01104ff16f"
-  integrity sha512-a76GbdVR3p7/q7rzjIp4lhKzJE1EvhNpf24yKcFDFEWkcJRNFuMwfOIPfbCxGSj/o20yl+yCAtD+zAOBkE0bOQ==
+"@wanchainmask/wan-trezor-keyring@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.1.tgz#4b6894c0c959c95f1f9f3328b132fb8f1515d02f"
+  integrity sha512-wIfMCfMokrizDbIiWGi/GRU7IudqnUS49DvAragDRVLg9NVEjn665xQdGSjtXIe8wlEeYDH0+N6+UYdBu6cgQw==
   dependencies:
     eth-sig-util "^1.4.2"
     events "^2.0.0"

@@ -7,6 +7,7 @@ import {
   nonceSortedCompletedTransactionsSelector,
   submittedPendingTransactionsSelector,
 } from '../transactions'
+import {MAINNET, TESTNET} from '../../../../app/scripts/controllers/network/enums'
 
 describe('Transaction Selectors', function () {
 
@@ -105,7 +106,7 @@ describe('Transaction Selectors', function () {
       const state = {
         metamask: {
           provider: {
-            nickname: 'mainnet',
+            nickname: MAINNET,
           },
           featureFlags: {
             showIncomingTransactions: false,
@@ -168,7 +169,7 @@ describe('Transaction Selectors', function () {
       const state = {
         metamask: {
           provider: {
-            nickname: 'mainnet',
+            nickname: MAINNET,
           },
           selectedAddress: '0xAddress',
           featureFlags: {
@@ -253,7 +254,7 @@ describe('Transaction Selectors', function () {
     const state = {
       metamask: {
         provider: {
-          nickname: 'mainnet',
+          nickname: MAINNET,
         },
         selectedAddress: '0xAddress',
         featureFlags: {

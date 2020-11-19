@@ -114,8 +114,8 @@ export default class AccountTracker {
       }
     })
 
-    this.addAccounts(accountsToAdd)
     this.removeAccount(accountsToRemove)
+    this.addAccounts(accountsToAdd)
   }
 
   /**
@@ -129,7 +129,7 @@ export default class AccountTracker {
     const accounts = this.store.getState().accounts
     // add initial state for addresses
     addresses.forEach((address) => {
-      accounts[address] = {}
+      accounts[address] = {address, balance:'0x0'}
     })
     // save accounts state
     this.store.updateState({ accounts })
@@ -201,7 +201,7 @@ export default class AccountTracker {
   async _updateAccounts () {
     const accounts = this.store.getState().accounts
     const addresses = Object.keys(accounts)
-    const currentNetwork = this.network.getNetworkState()
+    // const currentNetwork = this.network.getNetworkState()
 
     // switch (currentNetwork) {
     //   case MAINNET_NETWORK_ID.toString():

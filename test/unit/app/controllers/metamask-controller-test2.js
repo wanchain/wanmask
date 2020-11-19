@@ -68,17 +68,19 @@ const currentNetworkId = '42'
 const DEFAULT_LABEL = 'Account 1'
 const DEFAULT_LABEL_2 = 'Account 2'
 const TEST_SEED = 'debris dizzy just program just float decrease vacant alarm reduce speak stadium'
-const TEST_ADDRESS = '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc'
-const TEST_ADDRESS_2 = '0xec1adf982415d2ef5ec55899b9bfb8bc0f29251b'
-const TEST_ADDRESS_3 = '0xeb9e64b93097bc15f01f13eae97015c57ab64823'
+const TEST_ADDRESS = '0xb35991fdc8300270d7fa9dcc8823d9be93273906'
+// private = a5aeebe80384c3ff293b9bc309151a0fb42f3fc8039995c153d93f7c65b0c63d
+const TEST_ADDRESS_2 = '0x9173d357432d9dccfe995a9db558e48121ee9ed5'
+const TEST_ADDRESS_3 = '0xee8d05e25130247431ee4f52413c64a521fde8c6'
 const TEST_SEED_ALT = 'setup olympic issue mobile velvet surge alcohol burger horse view reopen gentle'
-const TEST_ADDRESS_ALT = '0xc42edfcc21ed14dda456aa0756c153f7985d8813'
+const TEST_ADDRESS_ALT = '0xb4cffaa1123557f685ba374359a50303e73bd358'
 const CUSTOM_RPC_URL = 'http://localhost:8545'
 
 describe('MetaMaskController', function () {
   let metamaskController
   const sandbox = sinon.createSandbox()
   const noop = () => {}
+  this.timeout(50000000)
 
   beforeEach(function () {
 
@@ -120,6 +122,8 @@ describe('MetaMaskController', function () {
     // add sinon method spies
     sandbox.spy(metamaskController.keyringController, 'createNewVaultAndKeychain')
     sandbox.spy(metamaskController.keyringController, 'createNewVaultAndRestore')
+    sandbox.spy(metamaskController, 'customCreateNewVaultAndKeychain')
+    sandbox.spy(metamaskController, 'customCreateNewVaultAndRestore')
   })
 
   afterEach(function () {
@@ -130,12 +134,12 @@ describe('MetaMaskController', function () {
   describe('#getAccounts', function () {
     it('returns first address when dapp calls web3.eth.getAccounts', async function () {
       const password = 'a-fake-password'
-      await metamaskController.createNewVaultAndRestore(password, TEST_SEED, 'ETH')
+      await metamaskController.createNewVaultAndRestore(password, TEST_SEED)
 
       metamaskController.networkController._baseProviderParams.getAccounts((err, res) => {
         assert.ifError(err)
         assert.equal(res.length, 1)
-        assert.equal(res[0], '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc')
+        assert.equal(res[0], '0xb35991fdc8300270d7fa9dcc8823d9be93273906')
       })
     })
   })
@@ -145,7 +149,7 @@ describe('MetaMaskController', function () {
 
     beforeEach(async function () {
       const password = 'a-fake-password'
-      await metamaskController.createNewVaultAndRestore(password, TEST_SEED, 'ETH')
+      await metamaskController.createNewVaultAndRestore(password, TEST_SEED)
       await metamaskController.importAccountWithStrategy('Private Key', [ importPrivkey ])
     })
 
@@ -170,14 +174,9 @@ describe('MetaMaskController', function () {
     const password = 'password'
 
     beforeEach(async function () {
-      await metamaskController.createNewVaultAndKeychain(password, 'ETH')
+      await metamaskController.createNewVaultAndKeychain(password)
       threeBoxSpies.init.reset()
       threeBoxSpies.turnThreeBoxSyncingOn.reset()
-
-      sandbox.stub(metamaskController, 'getBalance')
-      metamaskController.getBalance.callsFake(() => {
-        return Promise.resolve('0x0')
-      })
     })
 
     it('removes any identities that do not correspond to known accounts.', async function () {
@@ -210,17 +209,18 @@ describe('MetaMaskController', function () {
 
       const password = 'a-fake-password'
 
-      await metamaskController.createNewVaultAndKeychain(password, 'ETH')
-      await metamaskController.createNewVaultAndKeychain(password, 'ETH')
+      await metamaskController.createNewVaultAndKeychain(password)
+      await metamaskController.createNewVaultAndKeychain(password)
 
-      assert(metamaskController.keyringController.createNewVaultAndKeychain.calledOnce)
-      // assert(metamaskController.customCreateNewVaultAndKeychain.calledOnce)
+      // assert(metamaskController.keyringController.createNewVaultAndKeychain.calledOnce)
+      assert(metamaskController.customCreateNewVaultAndKeychain.calledOnce)
 
       selectStub.reset()
     })
   })
 
   describe('#createNewVaultAndRestore', function () {
+    this.timeout(5000000);
     it('should be able to call newVaultAndRestore despite a mistake.', async function () {
       const password = 'what-what-what'
       sandbox.stub(metamaskController, 'getBalance')
@@ -228,11 +228,11 @@ describe('MetaMaskController', function () {
         return Promise.resolve('0x0')
       })
 
-      await metamaskController.createNewVaultAndRestore(password, TEST_SEED.slice(0, -1), 'ETH').catch(() => null)
-      await metamaskController.createNewVaultAndRestore(password, TEST_SEED, 'ETH')
+      await metamaskController.createNewVaultAndRestore(password, TEST_SEED.slice(0, -1)).catch(() => null)
+      await metamaskController.createNewVaultAndRestore(password, TEST_SEED)
 
-      assert(metamaskController.keyringController.createNewVaultAndRestore.calledTwice)
-      // assert(metamaskController.customCreateNewVaultAndRestore.calledTwice)
+      // assert(metamaskController.keyringController.createNewVaultAndRestore.calledTwice)
+      assert(metamaskController.customCreateNewVaultAndRestore.calledTwice)
     })
 
     it('should clear previous identities after vault restoration', async function () {
@@ -242,10 +242,11 @@ describe('MetaMaskController', function () {
       })
 
       let startTime = Date.now()
-      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED, 'ETH')
+      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED)
       let endTime = Date.now()
 
       const firstVaultIdentities = cloneDeep(metamaskController.getState().identities)
+      console.log(JSON.stringify(firstVaultIdentities))
       assert.ok(
         (
           firstVaultIdentities[TEST_ADDRESS].lastSelected >= startTime &&
@@ -267,7 +268,7 @@ describe('MetaMaskController', function () {
       })
 
       startTime = Date.now()
-      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED_ALT, 'ETH')
+      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED_ALT)
       endTime = Date.now()
 
       const secondVaultIdentities = cloneDeep(metamaskController.getState().identities)
@@ -297,7 +298,7 @@ describe('MetaMaskController', function () {
       })
 
       const startTime = Date.now()
-      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED, 'ETH')
+      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED)
 
       const identities = cloneDeep(metamaskController.getState().identities)
       assert.ok(identities[TEST_ADDRESS].lastSelected >= startTime && identities[TEST_ADDRESS].lastSelected <= Date.now())
@@ -371,14 +372,14 @@ describe('MetaMaskController', function () {
     let identities, address
 
     beforeEach(function () {
-      address = '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc'
+      address = '0xb35991fdc8300270d7fa9dcc8823d9be93273906'
       identities = {
-        '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc': {
+        '0xb35991fdc8300270d7fa9dcc8823d9be93273906': {
           'address': address,
           'name': 'Account 1',
         },
-        '0xc42edfcc21ed14dda456aa0756c153f7985d8813': {
-          'address': '0xc42edfcc21ed14dda456aa0756c153f7985d8813',
+        '0xb4cffaa1123557f685ba374359a50303e73bd358': {
+          'address': '0xb4cffaa1123557f685ba374359a50303e73bd358',
           'name': 'Account 2',
         },
       }
@@ -538,7 +539,7 @@ describe('MetaMaskController', function () {
     let rpcTarget
 
     beforeEach(function () {
-      rpcTarget = metamaskController.setCustomRpc(CUSTOM_RPC_URL, 5, 'WAN')
+      rpcTarget = metamaskController.setCustomRpc(CUSTOM_RPC_URL)
     })
 
     it('returns custom RPC that when called', async function () {
@@ -591,7 +592,7 @@ describe('MetaMaskController', function () {
     })
 
     beforeEach(async function () {
-      await metamaskController.createNewVaultAndKeychain('password', 'ETH')
+      await metamaskController.createNewVaultAndKeychain('password')
     })
 
     it('#addNewAccount', async function () {
@@ -606,12 +607,12 @@ describe('MetaMaskController', function () {
       const selectedAddressStub = sinon.stub(metamaskController.preferencesController, 'getSelectedAddress')
       const getNetworkstub = sinon.stub(metamaskController.txController.txStateManager, 'getNetwork')
 
-      selectedAddressStub.returns('0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc')
+      selectedAddressStub.returns('0xb35991fdc8300270d7fa9dcc8823d9be93273906')
       getNetworkstub.returns(42)
 
       metamaskController.txController.txStateManager._saveTxList([
-        createTxMeta({ id: 1, status: 'unapproved', metamaskNetworkId: currentNetworkId, txParams: { from: '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc' } }),
-        createTxMeta({ id: 1, status: 'unapproved', metamaskNetworkId: currentNetworkId, txParams: { from: '0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc' } }),
+        createTxMeta({ id: 1, status: 'unapproved', metamaskNetworkId: currentNetworkId, txParams: { from: '0xb35991fdc8300270d7fa9dcc8823d9be93273906' } }),
+        createTxMeta({ id: 1, status: 'unapproved', metamaskNetworkId: currentNetworkId, txParams: { from: '0xb35991fdc8300270d7fa9dcc8823d9be93273906' } }),
         createTxMeta({ id: 2, status: 'rejected', metamaskNetworkId: '32' }),
         createTxMeta({ id: 3, status: 'submitted', metamaskNetworkId: currentNetworkId, txParams: { from: '0xB09d8505E1F4EF1CeA089D47094f5DD3464083d4' } }),
       ])
@@ -678,7 +679,7 @@ describe('MetaMaskController', function () {
 
     let msgParams, metamaskMsgs, messages, msgId
 
-    const address = '0xc42edfcc21ed14dda456aa0756c153f7985d8813'
+    const address = '0xb4cffaa1123557f685ba374359a50303e73bd358'
     const data = '0x43727970746f6b697474696573'
 
     beforeEach(async function () {
@@ -687,7 +688,7 @@ describe('MetaMaskController', function () {
         return Promise.resolve('0x0')
       })
 
-      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED_ALT, 'ETH')
+      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED_ALT)
 
       msgParams = {
         'from': address,
@@ -738,7 +739,7 @@ describe('MetaMaskController', function () {
   describe('#newUnsignedPersonalMessage', function () {
     let msgParams, metamaskPersonalMsgs, personalMessages, msgId
 
-    const address = '0xc42edfcc21ed14dda456aa0756c153f7985d8813'
+    const address = '0xb4cffaa1123557f685ba374359a50303e73bd358'
     const data = '0x43727970746f6b697474696573'
 
     beforeEach(async function () {
@@ -747,7 +748,7 @@ describe('MetaMaskController', function () {
         return Promise.resolve('0x0')
       })
 
-      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED_ALT, 'ETH')
+      await metamaskController.createNewVaultAndRestore('foobar1337', TEST_SEED_ALT)
 
       msgParams = {
         'from': address,
@@ -801,7 +802,7 @@ describe('MetaMaskController', function () {
     it('errors when signing a message', async function () {
       await metamaskController.signPersonalMessage(personalMessages[0].msgParams)
       assert.equal(metamaskPersonalMsgs[msgId].status, 'signed')
-      assert.equal(metamaskPersonalMsgs[msgId].rawSig, '0x6a1b65e2b8ed53cf398a769fad24738f9fbe29841fe6854e226953542c4b6a173473cb152b6b1ae5f06d601d45dd699a129b0a8ca84e78b423031db5baa734741b')
+      assert.equal(metamaskPersonalMsgs[msgId].rawSig, '0xca006c442e680b361ff27c876ac81e7cdb0e0b089f5caa00cc9db9dd77a7ae6a3abfad83302f853a548f49a9633e4ea4e088779a0d6d0608fde27f8920baf47a1c')
     })
   })
 

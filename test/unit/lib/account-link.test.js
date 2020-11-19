@@ -6,7 +6,7 @@ describe('Account link', function () {
     it('should return the correct block explorer url for an account', function () {
       const tests = [
         {
-          expected: 'https://wanscan.org/address/0xabcd',
+          expected: 'https://www.wanscan.org/address/0xabcd',
           network: 1,
           address: '0xabcd',
         },

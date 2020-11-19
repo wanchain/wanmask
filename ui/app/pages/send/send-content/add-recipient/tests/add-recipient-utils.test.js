@@ -64,12 +64,14 @@ describe('add-recipient utils', function () {
     })
 
     it('should return a known address recipient error if "to" is part of contract metadata', function () {
-      assert.deepEqual(getToWarningObject('0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', [{ 'address': '0xabc123' }], { 'address': '0xabc123' }), {
+      // assert.deepEqual(getToWarningObject('0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', [{ 'address': '0xabc123' }], { 'address': '0xabc123' }), {
+        assert.deepEqual(getToWarningObject('0xA13a41a2349D09C1E3a0dD4d9448Af4aD799fC4A', [{ 'address': '0xabc123' }], { 'address': '0xabc123' }), {
         to: KNOWN_RECIPIENT_ADDRESS_ERROR,
       })
     })
     it('should null if "to" is part of contract metadata but sendToken is falsy', function () {
-      assert.deepEqual(getToWarningObject('0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', [{ 'address': '0xabc123' }], { 'address': '0xabc123' }), {
+      // assert.deepEqual(getToWarningObject('0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359', [{ 'address': '0xabc123' }], { 'address': '0xabc123' }), {
+        assert.deepEqual(getToWarningObject('0xA13a41a2349D09C1E3a0dD4d9448Af4aD799fC4A', [{ 'address': '0xabc123' }], { 'address': '0xabc123' }), {
         to: KNOWN_RECIPIENT_ADDRESS_ERROR,
       })
     })

@@ -40,10 +40,10 @@ class AccountList extends Component {
         label: `Trezor MyWanWallet`,
         value: `m/44'/5718350'/0'/0`,
       },
-      // {
-      //   label: `Trezor Legacy`,
-      //   value: `m/44'/60'/0'/0`,
-      // },
+      {
+        label: `Trezor Legacy`,
+        value: `m/44'/60'/0'/0`,
+      },
     ]
   }
 

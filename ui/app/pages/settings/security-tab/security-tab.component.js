@@ -136,13 +136,21 @@ export default class SecurityTab extends PureComponent {
   render () {
     const { warning } = this.props
 
+    // return (
+    //   <div className="settings-page__body">
+    //     { warning && <div className="settings-tab__error">{ warning }</div> }
+    //     { this.renderSeedWords() }
+    //     {/* { this.renderIncomingTransactionsOptIn() } */}
+    //     { this.renderPhishingDetectionToggle() }
+    //     {/* { this.renderMetaMetricsOptIn() } */}
+    //   </div>
+    // )
+
     return (
       <div className="settings-page__body">
         { warning && <div className="settings-tab__error">{ warning }</div> }
         { this.renderSeedWords() }
-        {/* { this.renderIncomingTransactionsOptIn() } */}
         { this.renderPhishingDetectionToggle() }
-        {/* { this.renderMetaMetricsOptIn() } */}
       </div>
     )
   }
