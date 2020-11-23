@@ -968,7 +968,7 @@
     "message": "发送 代币"
   },
   "sentEther": {
-    "message": "万维币已发送"
+    "message": "万维币转账"
   },
   "sentTokens": {
     "message": "代币已发送"
