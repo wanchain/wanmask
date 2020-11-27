@@ -15,6 +15,7 @@ import { createSwappableProxy, createEventEmitterProxy } from 'swappable-obj-pro
 const networks = { networkList: {} }
 
 const WANCHAIN_RPC_URL = 'https://gwan-ssl.wandevs.org:56891'
+const WANCHAIN_CHINA_RPC_URL = 'http://54.223.100.92:26891'
 const WANCHAIN_TESTNET_RPC_URL = 'https://gwan-ssl.wandevs.org:46891'
 // const WANCHAIN_TESTNET_RPC_URL = 'https://demodex.wandevs.org:48545'
 
@@ -22,6 +23,7 @@ import {
   // RINKEBY,
   MAINNET,
   LOCALHOST,
+  MAINNETCHINA,
   TESTNET,
   INFURA_PROVIDER_TYPES,
 } from './enums'
@@ -147,7 +149,7 @@ export default class NetworkController extends EventEmitter {
 
   async setProviderType (type, rpcTarget = '', ticker = 'WAN', nickname = '') {
     assert.notEqual(type, 'rpc', `NetworkController - cannot call "setProviderType" with type 'rpc'. use "setRpcTarget"`)
-    assert(INFURA_PROVIDER_TYPES.includes(type) || type === LOCALHOST || type === MAINNET || type === TESTNET, `NetworkController - Unknown rpc type "${type}"`)
+    assert(INFURA_PROVIDER_TYPES.includes(type) || type === LOCALHOST || type === MAINNET || type === TESTNET || type === MAINNETCHINA, `NetworkController - Unknown rpc type "${type}"`)
     const providerConfig = { type, rpcTarget, ticker, nickname }
     this.providerConfig = providerConfig
   }
@@ -181,6 +183,8 @@ export default class NetworkController extends EventEmitter {
     // const isInfura = INFURA_PROVIDER_TYPES.includes(type)
     if (type === MAINNET) {
       this._configureStandardProvider({ rpcUrl: WANCHAIN_RPC_URL })
+    } else if (type === MAINNETCHINA) {
+      this._configureStandardProvider({ rpcUrl: WANCHAIN_CHINA_RPC_URL })
     } else if (type === TESTNET) {
       this._configureStandardProvider({ rpcUrl: WANCHAIN_TESTNET_RPC_URL })
     } else if (type === LOCALHOST) {

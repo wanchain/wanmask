@@ -901,7 +901,10 @@
     "message": "Lock time is too great"
   },
   "mainnet": {
-    "message": "Main Wanchain Network"
+    "message": "Mainnet Global"
+  },
+  "mainnetChina": {
+    "message": "Mainnet China"
   },
   "memorizePhrase": {
     "message": "Memorize this phrase."
@@ -1226,7 +1229,7 @@
     "message": "Rinkeby Test Network"
   },
   "testnet": {
-    "message": "Testnet Test Network"
+    "message": "Testnet Global"
   },
   "goerli": {
     "message": "Goerli Test Network"

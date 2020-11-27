@@ -2,6 +2,7 @@
 // export const RINKEBY = 'rinkeby'
 // export const KOVAN = 'kovan'
 export const MAINNET = 'wanchain'
+export const MAINNETCHINA = 'wanchainchina'
 // export const GOERLI = 'goerli'
 export const LOCALHOST = 'localhost'
 export const TESTNET = 'wanchaintestnet'
@@ -25,8 +26,10 @@ export const TESTNET_CHAIN_ID = '0x3'
 // export const KOVAN_DISPLAY_NAME = 'Kovan'
 // export const MAINNET_DISPLAY_NAME = 'Main Ethereum Network'
 // export const GOERLI_DISPLAY_NAME = 'Goerli'
-export const MAINNET_DISPLAY_NAME = 'Main Wanchain Network'
-export const TESTNET_DISPLAY_NAME = 'Testnet Wanchain Network'
+export const MAINNET_DISPLAY_NAME = 'Mainnet Global'
+export const TESTNET_DISPLAY_NAME = 'Testnet Global'
+
+export const MAINNET_CHINA_DISPLAY_NAME = 'Mainnet China'
 
 export const INFURA_PROVIDER_TYPES = [
   // ROPSTEN,
@@ -45,6 +48,7 @@ export const NETWORK_TYPE_TO_ID_MAP = {
   // [GOERLI]: { networkId: GOERLI_NETWORK_ID, chainId: GOERLI_CHAIN_ID },
   [MAINNET]: { networkId: MAINNET_NETWORK_ID, chainId: MAINNET_CHAIN_ID },
   [TESTNET]: { networkId: TESTNET_NETWORK_ID, chainId: TESTNET_CHAIN_ID },
+  [MAINNETCHINA]: { networkId: MAINNET_NETWORK_ID, chainId: MAINNET_CHAIN_ID },
 }
 
 export const NETWORK_TO_NAME_MAP = {
@@ -55,6 +59,7 @@ export const NETWORK_TO_NAME_MAP = {
   // [GOERLI]: GOERLI_DISPLAY_NAME,
   [MAINNET]: MAINNET_DISPLAY_NAME,
   [TESTNET]: TESTNET_DISPLAY_NAME,
+  [MAINNETCHINA]: MAINNET_CHINA_DISPLAY_NAME,
 
   // [ROPSTEN_NETWORK_ID]: ROPSTEN_DISPLAY_NAME,
   // [RINKEBY_NETWORK_ID]: RINKEBY_DISPLAY_NAME,

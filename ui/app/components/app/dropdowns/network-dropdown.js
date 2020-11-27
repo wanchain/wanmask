@@ -7,7 +7,7 @@ import * as actions from '../../../store/actions'
 import { Dropdown, DropdownMenuItem } from './components/dropdown'
 import NetworkDropdownIcon from './components/network-dropdown-icon'
 import { NETWORKS_ROUTE } from '../../../helpers/constants/routes'
-import { MAINNET, TESTNET } from '../../../../../app/scripts/controllers/network/enums'
+import { MAINNET, MAINNETCHINA, TESTNET } from '../../../../../app/scripts/controllers/network/enums'
 
 // classes from nodes of the toggle element.
 const notToggleElementClassnames = [
@@ -290,6 +290,29 @@ class NetworkDropdown extends Component {
             }}
           >
             {this.context.t('testnet')}
+          </span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          key="mainchina"
+          closeMenu={() => this.props.hideNetworkDropdown()}
+          onClick={() => this.handleClick(MAINNETCHINA)}
+          style={{ ...dropdownMenuItemStyle, borderColor: '#038789' }}
+        >
+          {
+            providerType === MAINNETCHINA
+              ? <i className="fa fa-check" />
+              : <div className="network-check__transparent">✓</div>
+          }
+          <NetworkDropdownIcon backgroundColor="#29B6AF" isSelected={providerType === MAINNETCHINA} />
+          <span
+            className="network-name-item"
+            style={{
+              color: providerType === MAINNETCHINA
+                ? '#ffffff'
+                : '#9b9b9b',
+            }}
+          >
+            {this.context.t('mainnetChina')}
           </span>
         </DropdownMenuItem>
         <DropdownMenuItem

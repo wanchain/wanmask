@@ -97,6 +97,17 @@ export default class Network extends Component {
             <div className="network-name">{t('testnet')}</div>
           </NetworkIndicator>
         )
+        case networkEnums.MAINNETCHINA:
+          return (
+            <NetworkIndicator disabled={disabled} hoverText={t('mainnetChina')} onClick={onClick} providerName={providerName}>
+              <NetworkDropdownIcon
+                backgroundColor="#038789"
+                nonSelectBackgroundColor="#15afb2"
+                loading={networkNumber === 'loading'}
+              />
+              <div className="network-name">{t('mainnetChina')}</div>
+            </NetworkIndicator>
+          )
 
       // case 'kovan':
       //   return (
