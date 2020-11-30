@@ -1,11 +1,20 @@
 
-import {MAINNET, TESTNET} from '../../../../../app/scripts/controllers/network/enums'
+import {MAINNET, TESTNET, MAINNETCHINA} from '../../../../../app/scripts/controllers/network/enums'
 const defaultNetworksData = [
   {
     labelKey: 'mainnet',
     iconColor: '#29B6AF',
     providerType: MAINNET,
     rpcUrl: 'https://gwan-ssl.wandevs.org:56891',
+    chainId: '1',
+    ticker: 'WAN',
+    blockExplorerUrl: 'https://www.wanscan.org',
+  },
+  {
+    labelKey: 'mainnetChina',
+    iconColor: '#29B6AF',
+    providerType: MAINNETCHINA,
+    rpcUrl: 'http://54.223.100.92:26891',
     chainId: '1',
     ticker: 'WAN',
     blockExplorerUrl: 'https://www.wanscan.org',
