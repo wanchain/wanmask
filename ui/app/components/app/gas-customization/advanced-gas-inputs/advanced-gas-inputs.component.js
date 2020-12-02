@@ -36,8 +36,17 @@ export default class AdvancedGasInputs extends Component {
     const { gasPrice, gasLimit } = this.state
 
     if (customGasPrice !== prevCustomGasPrice && customGasPrice !== gasPrice) {
-      this.setState({ gasPrice: customGasPrice })
+      if (customGasPrice !== 1) {
+        this.setState({ gasPrice: 1 })
+        this.changeGasPrice({ target: { value: 1 } })
+      } else {
+        this.setState({ gasPrice: customGasPrice })
+      }
+    } else if (gasPrice !== 1) {
+      this.setState({ gasPrice: 1 })
+      this.changeGasPrice({ target: { value: 1 } })
     }
+
     if (customGasLimit !== prevCustomGasLimit && customGasLimit !== gasLimit) {
       this.setState({ gasLimit: customGasLimit })
     }
@@ -53,8 +62,10 @@ export default class AdvancedGasInputs extends Component {
   }
 
   onChangeGasPrice = (e) => {
-    this.setState({ gasPrice: e.target.value })
-    this.changeGasPrice({ target: { value: e.target.value } })
+    // this.setState({ gasPrice: e.target.value })
+    // this.changeGasPrice({ target: { value: e.target.value } })
+    this.setState({ gasPrice: 1 })
+    this.changeGasPrice({ target: { value: 1 } })
   }
 
   changeGasPrice = (e) => {
@@ -116,7 +127,7 @@ export default class AdvancedGasInputs extends Component {
               'advanced-gas-inputs__gas-edit-row__input--warning': errorType === 'warning',
             })}
             type="number"
-            min="0"
+            min="1"
             value={value}
             onChange={onChange}
           />
