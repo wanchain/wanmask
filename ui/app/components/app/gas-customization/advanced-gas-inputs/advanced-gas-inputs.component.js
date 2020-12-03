@@ -36,13 +36,13 @@ export default class AdvancedGasInputs extends Component {
     const { gasPrice, gasLimit } = this.state
 
     if (customGasPrice !== prevCustomGasPrice && customGasPrice !== gasPrice) {
-      if (customGasPrice !== 1) {
+      if (customGasPrice < 1) {
         this.setState({ gasPrice: 1 })
         this.changeGasPrice({ target: { value: 1 } })
       } else {
         this.setState({ gasPrice: customGasPrice })
       }
-    } else if (gasPrice !== 1) {
+    } else if (gasPrice < 1) {
       this.setState({ gasPrice: 1 })
       this.changeGasPrice({ target: { value: 1 } })
     }
@@ -62,10 +62,13 @@ export default class AdvancedGasInputs extends Component {
   }
 
   onChangeGasPrice = (e) => {
-    // this.setState({ gasPrice: e.target.value })
-    // this.changeGasPrice({ target: { value: e.target.value } })
-    this.setState({ gasPrice: 1 })
-    this.changeGasPrice({ target: { value: 1 } })
+    if (e.target.value < 1) {
+      this.setState({ gasPrice: 1 })
+      this.changeGasPrice({ target: { value: 1 } })
+    } else {
+      this.setState({ gasPrice: e.target.value })
+      this.changeGasPrice({ target: { value: e.target.value } })
+    }
   }
 
   changeGasPrice = (e) => {
