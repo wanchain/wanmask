@@ -89,7 +89,7 @@ export function useTransactionDisplayData (transactionGroup) {
   const tokenDisplayValue = useTokenDisplayValue(initialTransaction?.txParams?.data, token, isTokenCategory)
   const tokenFiatAmount = useTokenFiatAmount(token?.address, tokenDisplayValue, token?.symbol)
 
-  const origin = stripHttpSchemes(initialTransaction.origin || initialTransaction.msgParams?.origin || '')
+  const origin = stripHttpSchemes(initialTransaction.origin || initialTransaction.msgParams?.origin || '').replace(/^metamask$/u,'wanmask')
 
   let category
   let title
