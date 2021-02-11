@@ -120,11 +120,11 @@ class AccountList extends Component {
       return device.slice(0, 1).toUpperCase() + device.slice(1)
     }
 
-    UNSAFE_componentWillMount = () => {
-      if (!this.props.selectedAccount && this.props.accounts.length > 0) {
-        this.props.onAccountChange('0');
-      }
-    }
+    // UNSAFE_componentWillMount = () => {
+    //   if (!this.props.selectedAccount && this.props.accounts.length > 0) {
+    //     this.props.onAccountChange('0');
+    //   }
+    // }
 
     renderHeader () {
       const { device } = this.props
@@ -153,7 +153,7 @@ class AccountList extends Component {
                   name="selectedAccount"
                   id={`address-${idx}`}
                   value={account.index}
-                  onChange={(e) => this.props.onAccountChange(e.target.value)}
+                  onClick={(e) => this.props.onAccountChange(e.target.value)}
                   checked={this.props.selectedAccount === account.index.toString()}
                 />
                 <label className="hw-account-list__item__label" htmlFor={`address-${idx}`}>

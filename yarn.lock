@@ -1735,17 +1735,6 @@
   resolved "https://registry.yarnpkg.com/@metamask/eslint-config/-/eslint-config-1.1.0.tgz#03c6fbec8ba3d95fa017d8b98ab5d0701f7458a4"
   integrity sha512-yFFHIxFn3cBd9brIW/+0fJGq16hT0xUyElP0YxiZHaY7j2T/l+X/414L9kqBOuPfPa9bIKulIcJJOfcrMJZp9w==
 
-"@metamask/eth-ledger-bridge-keyring@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@metamask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.6.tgz#2721c118a5eeb3685d372d0258f2a3b03dd01315"
-  integrity sha512-7OtX24lHSCioFZM+x4ZCsndT1wkI7cf8+ua3UntYqHFSRu/SDf6xVNBuD8isvWidNbVdcJKhfJuO3vFCDNsPBw==
-  dependencies:
-    eth-sig-util "^1.4.2"
-    ethereumjs-tx "^1.3.4"
-    ethereumjs-util "^5.1.5"
-    events "^2.0.0"
-    hdkey "0.8.0"
-
 "@metamask/eth-token-tracker@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@metamask/eth-token-tracker/-/eth-token-tracker-3.0.0.tgz#16ad4820abd6603d745c8cdaf7c5a9ae60e6db02"
@@ -2708,6 +2697,17 @@
     web3 "^0.20.7"
     web3-provider-engine "^16.0.1"
 
+"@wanchainmask/eth-ledger-bridge-keyring@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/@wanchainmask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.6.tgz#877d0b2bb8addc2dbe6748c346475d6132727e78"
+  integrity sha512-ojuBURX6OAvM6E7v0GOB5S0YP4V3RTFXOBcXMb0Mmh3FWMYQyuLo5MCd0bvv0UQH02ru4tN5LI4Kr5LF47WQQA==
+  dependencies:
+    eth-sig-util "^1.4.2"
+    ethereumjs-tx "^1.3.4"
+    ethereumjs-util "^5.1.5"
+    events "^2.0.0"
+    hdkey "0.8.0"
+
 "@wanchainmask/inpage-provider@^6.4.5":
   version "6.4.5"
   resolved "https://registry.npmjs.org/@wanchainmask/inpage-provider/-/inpage-provider-6.4.5.tgz#f823e26f716582c6f410db971c101a74cad430cb"
@@ -2736,10 +2736,10 @@
   resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.17.0.tgz#1fbfb28e84f29eeb21fe6e798bd825ac58c4db31"
   integrity sha512-6p10qRCLdlN+79bdABFQ4Gy+wq4Tttg8WtFB8b9y7uMfLin8m9bWz3B5DhwHfJ5RRjunLQziw/rBYPomXwr/4A==
 
-"@wanchainmask/wan-trezor-keyring@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.1.tgz#4b6894c0c959c95f1f9f3328b132fb8f1515d02f"
-  integrity sha512-wIfMCfMokrizDbIiWGi/GRU7IudqnUS49DvAragDRVLg9NVEjn665xQdGSjtXIe8wlEeYDH0+N6+UYdBu6cgQw==
+"@wanchainmask/wan-trezor-keyring@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.2.tgz#15f70ccdbc2e6ed9cace4683c51617534edad7f5"
+  integrity sha512-lpuLrAQXGNfvO4DLrcGtsz/BIoVL8Tg2csBMERswuqaaBsje9RWaf/nuqkosEIhQeso9kLZRRv80/FiJEtPoXw==
   dependencies:
     eth-sig-util "^1.4.2"
     events "^2.0.0"
