@@ -12,6 +12,12 @@ const explorerLink = function (hash, network) {
     case 3: // wanchain testnet
       link = `https://testnet.wanscan.org/tx/${hash}`
       break
+    case 888: // main net
+      link = `https://www.wanscan.org/tx/${hash}`
+      break
+    case 999: // wanchain testnet
+      link = `https://testnet.wanscan.org/tx/${hash}`
+      break
     default:
       link = ''
       break

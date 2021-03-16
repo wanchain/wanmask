@@ -33,12 +33,12 @@ function createNetworkAndChainIdMiddleware ({ network }) {
 
   switch (network) {
     case networkEnums.MAINNET:
-      netId = networkEnums.MAINNET_NETWORK_ID
-      chainId = '0x01'
+      netId = networkEnums.MAINNET_NETWORK_NEW_ID
+      chainId = '0x378'
       break
     case networkEnums.TESTNET:
-      netId = networkEnums.TESTNET_NETWORK_ID
-      chainId = '0x03'
+      netId = networkEnums.TESTNET_NETWORK_NEW_ID
+      chainId = '0x3e7'
       break
     // case 'ropsten':
     //   netId = networkEnums.ROPSTEN_NETWORK_ID

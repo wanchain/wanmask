@@ -51,7 +51,7 @@ import getBuyEthUrl from './lib/buy-eth-url'
 import selectChainId from './lib/select-chain-id'
 import { Mutex } from 'await-semaphore'
 import { version } from '../manifest/_base.json'
-import ethUtil from 'wanchainjs-util'
+import ethUtil from 'ethereumjs-util'
 
 import seedPhraseVerifier from './lib/seed-phrase-verifier'
 import log from 'loglevel'

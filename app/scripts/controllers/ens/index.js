@@ -1,4 +1,4 @@
-import ethUtil from 'wanchainjs-util'
+import ethUtil from 'ethereumjs-util'
 import ObservableStore from 'obs-store'
 import punycode from 'punycode'
 import log from 'loglevel'

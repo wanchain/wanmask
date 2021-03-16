@@ -1,5 +1,5 @@
 import abi from 'human-standard-token-abi'
-import ethUtil from 'wanchainjs-util'
+import ethUtil from 'ethereumjs-util'
 import { DateTime } from 'luxon'
 import punycode from 'punycode'
 

@@ -20,7 +20,11 @@ export function getEtherscanNetworkPrefix (networkId) {
       return ''
     case networkEnums.TESTNET_NETWORK_ID:
       return 'testnet.'
-    default: // also covers mainnet
+    case networkEnums.MAINNET_NETWORK_NEW_ID:
       return ''
+    case networkEnums.TESTNET_NETWORK_NEW_ID:
+      return 'testnet.'
+    default: // also covers mainnet
+      return 'testnet.'
   }
 }

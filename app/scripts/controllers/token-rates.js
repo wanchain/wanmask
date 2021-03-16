@@ -1,7 +1,7 @@
 import ObservableStore from 'obs-store'
 import log from 'loglevel'
 import { normalize as normalizeAddress } from 'eth-sig-util'
-import ethUtil from 'wanchainjs-util'
+import ethUtil from 'ethereumjs-util'
 
 
 // By default, poll every 3 minutes

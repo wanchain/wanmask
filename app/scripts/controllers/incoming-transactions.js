@@ -12,7 +12,7 @@ import {
   // GOERLI,
   MAINNET,
   TESTNET,
-  NETWORK_TYPE_TO_ID_MAP,
+  // NETWORK_TYPE_TO_ID_MAP,
 } from './network/enums'
 
 const fetch = fetchWithTimeout({

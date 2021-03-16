@@ -15,7 +15,6 @@ import pify from 'pify'
 import Web3 from 'web3'
 import SINGLE_CALL_BALANCES_ABI from 'single-call-balance-checker-abi'
 import { bnToHex } from './util'
-import { MAINNET_NETWORK_ID, TESTNET_NETWORK_ID } from '../controllers/network/enums'
 
 import {
   SINGLE_CALL_BALANCES_ADDRESS,
