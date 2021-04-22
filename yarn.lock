@@ -2697,10 +2697,10 @@
     web3 "^0.20.7"
     web3-provider-engine "^16.0.1"
 
-"@wanchainmask/eth-ledger-bridge-keyring@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.npmjs.org/@wanchainmask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.6.tgz#877d0b2bb8addc2dbe6748c346475d6132727e78"
-  integrity sha512-ojuBURX6OAvM6E7v0GOB5S0YP4V3RTFXOBcXMb0Mmh3FWMYQyuLo5MCd0bvv0UQH02ru4tN5LI4Kr5LF47WQQA==
+"@wanchainmask/eth-ledger-bridge-keyring@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/@wanchainmask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.7.tgz#2c560cc6c0d9ac1e092862ded428f7cc2b070ccf"
+  integrity sha512-EycKXoArbH3IgGo3kmAyv8ZPAxEWnGv/5aGNS/H5nLyl6COFYFeYC2Z+gnhzQZOUGfr1r9ceRJFeXTVxToPmgA==
   dependencies:
     eth-sig-util "^1.4.2"
     ethereumjs-tx "^1.3.4"
@@ -2731,15 +2731,15 @@
     gl-mat4 "1.1.4"
     gl-vec3 "1.0.3"
 
-"@wanchainmask/wan-contract-metadata@^1.18.0":
-  version "1.18.0"
-  resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.18.0.tgz#dce08af7e53dfa1d7f8bcbef33b918773d567404"
-  integrity sha512-Ez3nQsxfCpR8QM9qpC/t/PB3pR5B2kvMCXdx3QyaIb9iyX+731NXMTaeJe3pj2retIGVMaKxDCZTwJiBV1DVJA==
+"@wanchainmask/wan-contract-metadata@^1.18.1":
+  version "1.18.1"
+  resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.18.1.tgz#6d10532b9ce47a6c7497cd50f5882a209de963f7"
+  integrity sha512-/iMw9fhDWTSQkcjRCV1DVurcE4CE/nogjR6toRfpnGtfLcFD4K+RyprdGW7n7rzNPNVcEHgwNEnuk4wrZ70UDg==
 
-"@wanchainmask/wan-trezor-keyring@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.2.tgz#15f70ccdbc2e6ed9cace4683c51617534edad7f5"
-  integrity sha512-lpuLrAQXGNfvO4DLrcGtsz/BIoVL8Tg2csBMERswuqaaBsje9RWaf/nuqkosEIhQeso9kLZRRv80/FiJEtPoXw==
+"@wanchainmask/wan-trezor-keyring@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.3.tgz#ef745cb7517d07848bb9c7940ca85ff353c7e50c"
+  integrity sha512-fzlVzouk6lDAmyggwzl3TZOaZGaZkgu8vAjJ1Q681Cr3xhhTU0wO0SiEJbY9P0Zf+STObptVh0aacD4CZ3yJhg==
   dependencies:
     eth-sig-util "^1.4.2"
     events "^2.0.0"
