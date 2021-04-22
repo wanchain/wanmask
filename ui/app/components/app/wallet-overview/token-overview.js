@@ -59,7 +59,6 @@ const TokenOverview = ({ className, token }) => {
           type="secondary"
           className="token-overview__button"
           rounded
-          icon={<PaperAirplane color="#037DD6" size={20} />}
           onClick={() => {
             sendTokenEvent()
             dispatch(updateSendToken(token))

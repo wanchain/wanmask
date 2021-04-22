@@ -163,7 +163,7 @@ class ConnectHardwareForm extends Component {
       this.setState({ error: this.context.t('accountSelectionRequired') })
     }
 
-    const description = '';
+    const description = ''
     return unlockHardwareWalletAccounts(
       selectedAccounts,
       device,
