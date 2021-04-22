@@ -163,10 +163,7 @@ class ConnectHardwareForm extends Component {
       this.setState({ error: this.context.t('accountSelectionRequired') })
     }
 
-    const description =
-      MEW_PATH === path
-        ? this.context.t('hardwareWalletLegacyDescription')
-        : '';
+    const description = '';
     return unlockHardwareWalletAccounts(
       selectedAccounts,
       device,
