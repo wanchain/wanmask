@@ -2731,10 +2731,10 @@
     gl-mat4 "1.1.4"
     gl-vec3 "1.0.3"
 
-"@wanchainmask/wan-contract-metadata@^1.18.1":
-  version "1.18.1"
-  resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.18.1.tgz#6d10532b9ce47a6c7497cd50f5882a209de963f7"
-  integrity sha512-/iMw9fhDWTSQkcjRCV1DVurcE4CE/nogjR6toRfpnGtfLcFD4K+RyprdGW7n7rzNPNVcEHgwNEnuk4wrZ70UDg==
+"@wanchainmask/wan-contract-metadata@^1.18.2":
+  version "1.18.2"
+  resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.18.2.tgz#98acfa882041a9ca79ad2ff4e8bef5017d693fd0"
+  integrity sha512-M5ygyDLPQMkARqigO1HGwIc/KT/xFNHfrU1BGqa2iDgraQi52GQp1VsXqpluMlaldD8NIaB6YD0dadYTqcEu5Q==
 
 "@wanchainmask/wan-trezor-keyring@^0.4.3":
   version "0.4.3"
