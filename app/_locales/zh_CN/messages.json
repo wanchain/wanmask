@@ -1314,5 +1314,11 @@
   },
   "connectedSites": {
     "message": "Connected sites"
+  },
+  "swap": {
+    "message": "兑换"
+  },
+  "zoo": {
+    "message": "动物园"
   }
 }

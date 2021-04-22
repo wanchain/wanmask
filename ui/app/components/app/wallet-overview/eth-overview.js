@@ -95,7 +95,6 @@ const EthOverview = ({ className }) => {
             type="secondary"
             className="eth-overview__button"
             rounded
-            icon={<PaperAirplane color="#037DD6" size={20} />}
             onClick={() => {
               sendEvent()
               history.push(SEND_ROUTE)
@@ -103,6 +102,16 @@ const EthOverview = ({ className }) => {
             data-testid="eth-overview-send"
           >
             { t('send') }
+          </Button>
+          <Button
+            type="secondary"
+            className="eth-overview__button"
+            rounded
+            onClick={() => {
+              window.open('https://wanswap.finance/#/swap', '_blank')
+            }}
+          >
+            {t('swap')}
           </Button>
         </>
       )}

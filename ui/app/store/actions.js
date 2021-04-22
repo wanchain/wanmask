@@ -386,22 +386,28 @@ export function connectHardware (deviceName, page, hdPath) {
   }
 }
 
-export function unlockHardwareWalletAccount (index, deviceName, hdPath) {
-  log.debug(`background.unlockHardwareWalletAccount`, index, deviceName, hdPath)
-  return (dispatch) => {
+export function unlockHardwareWalletAccounts (indexes, deviceName, hdPath, hdPathDescription) {
+  log.debug(`background.unlockHardwareWalletAccounts`, indexes, deviceName, hdPath, hdPathDescription)
+  return async (dispatch) => {
     dispatch(showLoadingIndication())
-    return new Promise((resolve, reject) => {
-      background.unlockHardwareWalletAccount(index, deviceName, hdPath, (err) => {
-        if (err) {
-          log.error(err)
-          dispatch(displayWarning(err.message))
-          return reject(err)
-        }
+    for (const index of indexes) {
+      try {
+        await promisifiedBackground.unlockHardwareWalletAccount(
+          index,
+          deviceName,
+          hdPath,
+          hdPathDescription,
+        );
+      } catch (e) {
+        log.error(e);
+        dispatch(displayWarning(e.message));
+        dispatch(hideLoadingIndication());
+        throw e;
+      }
+    }
 
-        dispatch(hideLoadingIndication())
-        return resolve()
-      })
-    })
+    dispatch(hideLoadingIndication());
+    return undefined;
   }
 }
 

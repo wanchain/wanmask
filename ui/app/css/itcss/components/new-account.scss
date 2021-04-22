@@ -418,6 +418,15 @@
     }
   }
 
+  &__item__checkbox {
+    display: flex;
+    flex: 1;
+
+    input {
+      margin-top: 13px;
+    }
+  }
+
   &__item__label {
     display: flex;
     flex: 1;
