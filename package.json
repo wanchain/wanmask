@@ -105,7 +105,7 @@
     "eth-phishing-detect": "^1.1.14",
     "eth-query": "^2.1.2",
     "eth-sig-util": "^2.3.0",
-    "@wanchainmask/wan-trezor-keyring": "^0.4.4",
+    "@wanchainmask/wan-trezor-keyring": "^0.4.5",
     "ethereum-ens-network-map": "^1.0.2",
     "ethereumjs-abi": "^0.6.4",
     "wanchainjs-tx": "^1.5.0",

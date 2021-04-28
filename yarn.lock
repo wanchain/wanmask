@@ -1032,6 +1032,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.12.5":
+  version "7.13.17"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.13.17.tgz#8966d1fc9593bf848602f0662d6b4d0069e3a7ec"
+  integrity sha512-NCdgJEelPTSh+FEFylhnP1ylq848l1z9t9N0j1Lfbcw0+KXGjsTvUmkxy+voLLXB5SOKMbLLx4jxYliGrYQseA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.1.0", "@babel/template@^7.10.4", "@babel/template@^7.4.4", "@babel/template@^7.7.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.10.4.tgz#3251996c4200ebc71d1a8fc405fba940f36ba278"
@@ -2736,15 +2743,15 @@
   resolved "https://registry.npmjs.org/@wanchainmask/wan-contract-metadata/-/wan-contract-metadata-1.18.3.tgz#2eee9a97d20e9a086a6ed85cb96e64af1875fca4"
   integrity sha512-xxRA8iGZ4r366rddVWpQav1a4nuNfC3gH1d3Dh5xmlhClUDeQpjPkPK28hAVWP8rhKZRpJ5AuWZApuBHDfeNaQ==
 
-"@wanchainmask/wan-trezor-keyring@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.4.tgz#60f57be802f3f3b022e1da2e43aa9e7f1c1e29c3"
-  integrity sha512-cP0IY79VGfEuBtlp4lvOHr/x5zwk8h9k54yA1vn3pJ4XLc/eltWbzni6KLXP3f4h1lWTIE9PgyhUTrSYLjfbFQ==
+"@wanchainmask/wan-trezor-keyring@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.npmjs.org/@wanchainmask/wan-trezor-keyring/-/wan-trezor-keyring-0.4.5.tgz#645ac0207212ba7f75ed045571e75875c7a50301"
+  integrity sha512-5ZxQG77je+Z6F7MGE7d1sqdXFEoWG7heVUKSIyo2Ff9vA5S+GrxfQ9NCzixb/8OzriMlzUdm6fBhx/KPllTFEg==
   dependencies:
     eth-sig-util "^1.4.2"
     events "^2.0.0"
     hdkey "0.8.0"
-    trezor-connect "^7.0.1"
+    trezor-connect "^8.1.26"
     wanchainjs-tx "^1.3.4"
     wanchainjs-util "^5.1.5"
 
@@ -10803,6 +10810,11 @@ events@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.0.0.tgz#9a0a0dfaf62893d92b875b8f2698ca4114973e88"
   integrity sha512-Dc381HFWJzEOhQ+d8pkNon++bk9h6cdAoAj4iE6Q4y6xgTzySWXlKn05/TVNpjnfRqi/X0EpJEJohPjNI3zpVA==
+
+events@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.npmjs.org/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
+  integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
 eventsource@^1.0.7:
   version "1.0.7"
@@ -26063,14 +26075,14 @@ tree-kill@^1.1.0, tree-kill@^1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-trezor-connect@^7.0.1:
-  version "7.0.5"
-  resolved "https://registry.npmjs.org/trezor-connect/-/trezor-connect-7.0.5.tgz#00ebc0abd302177042b6ff9ba71e7bc491e4b360"
-  integrity sha512-cGHcNuO/kGVF6b1mp5VB/RwXcXwqZJDPLp3opx7vM+BQ8xB4oDAUdL+T8aCKRbDv6HwP/wvGwoaok/+9kYOPfA==
+trezor-connect@^8.1.26:
+  version "8.1.26"
+  resolved "https://registry.npmjs.org/trezor-connect/-/trezor-connect-8.1.26.tgz#f5c1cebecd89c4cf1fa61b3c7571ad879196e5b6"
+  integrity sha512-FC2ebYVFkOxzDF5i7ZuyS9/jh0F7hsY6e9j8hqJDzgYe+RG1vpTK3v3sNaKNfu6tt6/MwzS2usR7YkoYfN/mCA==
   dependencies:
-    "@babel/runtime" "^7.3.1"
-    events "^3.0.0"
-    whatwg-fetch "^3.0.0"
+    "@babel/runtime" "^7.12.5"
+    events "^3.2.0"
+    whatwg-fetch "^3.5.0"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
@@ -27722,15 +27734,15 @@ whatwg-fetch@>=0.10.0:
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
   integrity sha1-nITsLc9oGH/wC8ZOEnS0QhduHIQ=
 
-whatwg-fetch@^3.0.0:
-  version "3.6.2"
-  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
-  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
-
 whatwg-fetch@^3.4.1:
   version "3.4.1"
   resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.4.1.tgz#e5f871572d6879663fa5674c8f833f15a8425ab3"
   integrity sha512-sofZVzE1wKwO+EYPbWfiwzaKovWiZXf4coEzjGP9b2GBVgQRLQUZ2QcuPpQExGDAW5GItpEm6Tl4OU5mywnAoQ==
+
+whatwg-fetch@^3.5.0:
+  version "3.6.2"
+  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
 
 whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
   version "2.3.0"
