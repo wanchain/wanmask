@@ -2704,10 +2704,10 @@
     web3 "^0.20.7"
     web3-provider-engine "^16.0.1"
 
-"@wanchainmask/eth-ledger-bridge-keyring@^0.2.8":
-  version "0.2.8"
-  resolved "https://registry.npmjs.org/@wanchainmask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.8.tgz#a142118f646d9b09620243ce800c272fbe88d3b5"
-  integrity sha512-TADye6uXHePrLzOiAZIwjbe4XFv164Qf2VWyTAC+OpFt1IVeEyMYs52vSJRAbCSy5m8B+CSAtnsod+vSkOkCRg==
+"@wanchainmask/eth-ledger-bridge-keyring@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.npmjs.org/@wanchainmask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.10.tgz#4e282b1b79f5860f3b69d3ae4fdace25ad46de23"
+  integrity sha512-T5uUlEAJoUmSY9UKbyJ3db2pkudvnAxtJfpLQNM2i8LyCiJzH31tsJ8ormDYvSkpgMOAxOHoG3CMzIhyQHtY4w==
   dependencies:
     eth-sig-util "^1.4.2"
     ethereumjs-tx "^1.3.4"

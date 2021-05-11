@@ -872,6 +872,34 @@ export default class MetamaskController extends EventEmitter {
       log.error(error)
     }
 
+    // check keyring, if selectAddress is not in the keyring, remove one
+    const { keyrings } = this.keyringController.memStore.getState()
+    console.log(`keyring memstore ${JSON.stringify(this.keyringController.memStore, null, 2)}`)
+    console.log(`keyring store ${JSON.stringify(this.keyringController.store, null, 2)}`)
+    const addresses = keyrings.reduce((acc, { accounts }) => acc.concat(accounts), [])
+
+    if (addresses.length) {
+      const { identities } = this.preferencesController.store.getState()
+      const _identities = Object.keys(identities)
+      for(let i = 0; i < _identities.length; i++) {
+        const identity = _identities[i]
+        if (!addresses.includes(identity)) {
+          await this.permissionsController.removeAllAccountPermissions(identity)
+          // Remove account from the preferences controller
+          this.preferencesController.removeAddress(identity)
+          // Remove account from the account tracker controller
+          this.accountTracker.removeAccount([identity])
+        }
+      }
+
+      // if selected address not in the addresses, set to 0
+      const selectedAddress = this.preferencesController.getSelectedAddress()
+      console.log(`selectedAddress = ${selectedAddress}, addresses = ${addresses}`)
+      if (!addresses.includes(selectedAddress)) {
+        this.preferencesController.setSelectedAddress(addresses[0])
+      }
+    }
+
     return this.keyringController.fullUpdate()
   }
 
