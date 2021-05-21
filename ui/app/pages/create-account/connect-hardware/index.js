@@ -11,17 +11,11 @@ import { getMostRecentOverviewPage } from '../../../ducks/history/history'
 const LEDGER_LIVE_PATH = `m/44'/5718350'/0'/0/0`
 const MEW_PATH = `m/44'/5718350'/0'`
 const TREZOR_PATH = `m/44'/5718350'/0'/0`
-const WAN_LEGACY_PATH = `m/44'/60'/0'/0/0`
-const WAN_LEGACY_MEW_PATH = `m/44'/60'/0'`
-const WAN_LEGACY_TREZOR_PATH = `m/44'/60'/0'/0`
 
 const HD_PATHS = [
   { label: 'Ledger Live', value: LEDGER_LIVE_PATH },
   { label: 'Legacy MyWanWallet', value: MEW_PATH },
   { label: 'Trezor MyWanWallet', value: TREZOR_PATH },
-  { label: 'WAN Legacy Ledger Live', value: WAN_LEGACY_PATH },
-  { label: 'WAN Legacy MEW / MyCrypto', value: WAN_LEGACY_MEW_PATH },
-  { label: 'WAN Legacy Trezor', value: WAN_LEGACY_TREZOR_PATH },
 ];
 
 class ConnectHardwareForm extends Component {
