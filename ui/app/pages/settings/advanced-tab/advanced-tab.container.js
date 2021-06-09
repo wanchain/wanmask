@@ -12,6 +12,7 @@ import {
   turnThreeBoxSyncingOnAndInitialize,
   setUseNonceField,
   setIpfsGateway,
+  setLedgerLivePreference,
 } from '../../../store/actions'
 import { getPreferences } from '../../../selectors'
 
@@ -27,6 +28,7 @@ export const mapStateToProps = (state) => {
     threeBoxDisabled,
     useNonceField,
     ipfsGateway,
+    useLedgerLive,
   } = metamask
   const { showFiatInTestnets, autoLockTimeLimit } = getPreferences(state)
 
@@ -41,6 +43,7 @@ export const mapStateToProps = (state) => {
     threeBoxDisabled,
     useNonceField,
     ipfsGateway,
+    useLedgerLive,
   }
 }
 
@@ -68,6 +71,8 @@ export const mapDispatchToProps = (dispatch) => {
     setIpfsGateway: (value) => {
       return dispatch(setIpfsGateway(value))
     },
+    setLedgerLivePreference: (value) =>
+      dispatch(setLedgerLivePreference(value)),
   }
 }
 

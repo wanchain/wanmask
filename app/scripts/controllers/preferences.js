@@ -639,6 +639,24 @@ export default class PreferencesController {
     return Promise.resolve(domain)
   }
 
+  /**
+   * A setter for the `useLedgerLive` property
+   * @param {bool} domain - Value for ledger live support
+   * @returns {Promise<string>} A promise of the update to useLedgerLive
+   */
+  async setLedgerLivePreference(useLedgerLive) {
+    this.store.updateState({ useLedgerLive })
+    return useLedgerLive
+  }
+
+  /**
+   * A getter for the `useLedgerLive` property
+   * @returns {boolean} User preference of using Ledger Live
+   */
+  getLedgerLivePreference() {
+    return this.store.getState().useLedgerLive
+  }
+
   //
   // PRIVATE METHODS
   //

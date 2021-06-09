@@ -15,6 +15,13 @@ const MESSAGE_TYPE = {
   ETH_SIGN: 'eth_sign',
   ETH_SIGN_TYPED_DATA: 'eth_signTypedData',
   PERSONAL_SIGN: 'personal_sign',
+
+  GET_PROVIDER_STATE: 'metamask_getProviderState',
+  LOG_WEB3_SHIM_USAGE: 'metamask_logWeb3ShimUsage',
+  WATCH_ASSET: 'wallet_watchAsset',
+  WATCH_ASSET_LEGACY: 'metamask_watchAsset',
+  ADD_ETHEREUM_CHAIN: 'wallet_addEthereumChain',
+  SWITCH_ETHEREUM_CHAIN: 'wallet_switchEthereumChain',
 }
 
 export {

@@ -68,7 +68,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@material-ui/core": "^4.11.0",
     "@wanchainmask/controllers": "^3.0.1",
-    "@wanchainmask/eth-ledger-bridge-keyring": "^0.2.11",
+    "@buzhou/eth-ledger-bridge-keyring": "^0.4.0",
     "@metamask/eth-token-tracker": "^3.0.0",
     "@metamask/etherscan-link": "^1.1.0",
     "@wanchainmask/inpage-provider": "^6.4.5",

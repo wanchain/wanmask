@@ -1777,5 +1777,57 @@
   },
   "zoo": {
     "message": "zoo"
+  },
+  "hardwareWalletSupportLinkConversion": {
+    "message": "click here"
+  },
+  "ledgerLiveAdvancedSetting": {
+    "message": "Use Ledger Live"
+  },
+  "ledgerLiveAdvancedSettingDescription": {
+    "message": "The new Ledger Live bridge allows you to more easily use your Ledger.  Only available in Chrome."
+  },
+  "ledgerLiveApp": {
+    "message": "Ledger Live App"
+  },
+  "ledgerLocked": {
+    "message": "Cannot connect to Ledger device. Please make sure your device is unlocked and Ethereum app is opened."
+  },
+  "ledgerTimeout": {
+    "message": "Ledger Live is taking too long to respond or connection timeout. Make sure Ledger Live app is opened and your device is unlocked."
+  },
+  "selectAnAccountHelpDirections": {
+    "message": "Don't see your account? $1",
+    "description": "$1 represents the `hardwareWalletSupportLinkConversion` localization key"
+  },
+  "step1LedgerWallet": {
+    "message": "Download Ledger app"
+  },
+  "step1LedgerWalletMsg": {
+    "message": "Download, set up, and enter your password to unlock $1.",
+    "description": "$1 represents the `ledgerLiveApp` localization value"
+  },
+  "step1TrezorWallet": {
+    "message": "Plug in Trezor wallet"
+  },
+  "step1TrezorWalletMsg": {
+    "message": "Connect your wallet directly to your computer. For more on using your hardware wallet device, $1",
+    "description": "$1 represents the `hardwareWalletSupportLinkConversion` localization key"
+  },
+  "step2LedgerWallet": {
+    "message": "Plug in Ledger wallet"
+  },
+  "step2LedgerWalletMsg": {
+    "message": "Connect your wallet directly to your computer.  Unlock your Ledger and open the Ethereum app. For more on using your hardware wallet device, $1.",
+    "description": "$1 represents the `hardwareWalletSupportLinkConversion` localization key"
+  },
+  "switchLedgerPaths": {
+    "message": "Switch Ledger paths"
+  },
+  "switchLedgerPathsText": {
+    "message": "Select the Ledger path to view other accounts"
+  },
+  "continue": {
+    "message": "Continue"
   }
 }
