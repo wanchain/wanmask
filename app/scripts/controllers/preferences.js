@@ -62,6 +62,7 @@ export default class PreferencesController {
 
       // ENS decentralized website resolution
       ipfsGateway: 'dweb.link',
+      useLedgerLive: false,
     }, opts.initState)
 
     this.diagnostics = opts.diagnostics

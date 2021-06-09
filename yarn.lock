@@ -1096,6 +1096,17 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@buzhou/eth-ledger-bridge-keyring@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/@buzhou/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.4.0.tgz#20774b916491cca1e4e1c339feaaf1bee144c7c4"
+  integrity sha512-Tp+B6fej5s75NB0rcKTYXapIkeD0QS3rfBRVZa5OW2SrPEPbjDx7f4V24djtThRlYmsgxQSUPyqqLKpb+QiNQQ==
+  dependencies:
+    eth-sig-util "^1.4.2"
+    ethereumjs-tx "^1.3.4"
+    ethereumjs-util "^5.1.5"
+    events "^2.0.0"
+    hdkey "0.8.0"
+
 "@chromaui/localtunnel@1.10.1":
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/@chromaui/localtunnel/-/localtunnel-1.10.1.tgz#34da7dab7055a16b1b9034a9eb7e3054ebec4b98"
@@ -2703,17 +2714,6 @@
     wan-wns-namehash "^2.0.8"
     web3 "^0.20.7"
     web3-provider-engine "^16.0.1"
-
-"@wanchainmask/eth-ledger-bridge-keyring@^0.2.11":
-  version "0.2.11"
-  resolved "https://registry.npmjs.org/@wanchainmask/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.2.11.tgz#ad024eb4b09ec94cb9c073d6cf5f6bfdfbb1e4a4"
-  integrity sha512-YCAR+IP6Uka8eV7nXHN92OpLEWJUMj00yQFJRVh80Y90W5pndiOBicXEZ4yTpaxMGRF/zTtWEv2vSIZSc3nHFQ==
-  dependencies:
-    eth-sig-util "^1.4.2"
-    ethereumjs-tx "^1.3.4"
-    ethereumjs-util "^5.1.5"
-    events "^2.0.0"
-    hdkey "0.8.0"
 
 "@wanchainmask/inpage-provider@^6.4.5":
   version "6.4.5"
