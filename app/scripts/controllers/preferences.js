@@ -642,7 +642,7 @@ export default class PreferencesController {
 
   /**
    * A setter for the `useLedgerLive` property
-   * @param {bool} domain - Value for ledger live support
+   * @param {bool} useLedgerLive - Value for ledger live support
    * @returns {Promise<string>} A promise of the update to useLedgerLive
    */
   async setLedgerLivePreference(useLedgerLive) {

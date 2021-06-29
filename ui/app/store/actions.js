@@ -2428,8 +2428,8 @@ export function getCurrentWindowTab () {
 
 export function setLedgerLivePreference(value) {
   return async (dispatch) => {
-    dispatch(showLoadingIndication());
-    await promisifiedBackground.setLedgerLivePreference(value);
-    dispatch(hideLoadingIndication());
+    dispatch(showLoadingIndication())
+    await promisifiedBackground.setLedgerLivePreference(value)
+    dispatch(hideLoadingIndication())
   };
 }

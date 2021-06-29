@@ -52,7 +52,7 @@ const ToggleButton = (props) => {
   const modifier = value ? 'on' : 'off'
 
   return (
-    <div className={classnames('toggle-button', `toggle-button--${modifier}`, {'toggle-button--disabled': disabled})}>
+    <div className={classnames('toggle-button', `toggle-button--${modifier}`, { 'toggle-button--disabled': disabled })}>
       <ReactToggleButton
         value={value}
         onToggle={disabled ? undefined : onToggle}

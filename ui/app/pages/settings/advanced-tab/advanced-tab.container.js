@@ -71,8 +71,9 @@ export const mapDispatchToProps = (dispatch) => {
     setIpfsGateway: (value) => {
       return dispatch(setIpfsGateway(value))
     },
-    setLedgerLivePreference: (value) =>
-      dispatch(setLedgerLivePreference(value)),
+    setLedgerLivePreference: (value) => {
+      return dispatch(setLedgerLivePreference(value))
+    },
   }
 }
 

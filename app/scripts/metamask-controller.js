@@ -873,33 +873,33 @@ export default class MetamaskController extends EventEmitter {
       log.error(error)
     }
 
-    // check keyring, if selectAddress is not in the keyring, remove one
-    const { keyrings } = this.keyringController.memStore.getState()
-    console.log(`keyring memstore ${JSON.stringify(this.keyringController.memStore, null, 2)}`)
-    console.log(`keyring store ${JSON.stringify(this.keyringController.store, null, 2)}`)
-    const addresses = keyrings.reduce((acc, { accounts }) => acc.concat(accounts), [])
+    // // check keyring, if selectAddress is not in the keyring, remove one
+    // const { keyrings } = this.keyringController.memStore.getState()
+    // console.log(`keyring memstore ${JSON.stringify(this.keyringController.memStore, null, 2)}`)
+    // console.log(`keyring store ${JSON.stringify(this.keyringController.store, null, 2)}`)
+    // const addresses = keyrings.reduce((acc, { accounts }) => acc.concat(accounts), [])
 
-    if (addresses.length) {
-      const { identities } = this.preferencesController.store.getState()
-      const _identities = Object.keys(identities)
-      for(let i = 0; i < _identities.length; i++) {
-        const identity = _identities[i]
-        if (!addresses.includes(identity)) {
-          await this.permissionsController.removeAllAccountPermissions(identity)
-          // Remove account from the preferences controller
-          this.preferencesController.removeAddress(identity)
-          // Remove account from the account tracker controller
-          this.accountTracker.removeAccount([identity])
-        }
-      }
+    // if (addresses.length) {
+    //   const { identities } = this.preferencesController.store.getState()
+    //   const _identities = Object.keys(identities)
+    //   for(let i = 0; i < _identities.length; i++) {
+    //     const identity = _identities[i]
+    //     if (!addresses.includes(identity)) {
+    //       await this.permissionsController.removeAllAccountPermissions(identity)
+    //       // Remove account from the preferences controller
+    //       this.preferencesController.removeAddress(identity)
+    //       // Remove account from the account tracker controller
+    //       this.accountTracker.removeAccount([identity])
+    //     }
+    //   }
 
-      // if selected address not in the addresses, set to 0
-      const selectedAddress = this.preferencesController.getSelectedAddress()
-      console.log(`selectedAddress = ${selectedAddress}, addresses = ${addresses}`)
-      if (!addresses.includes(selectedAddress)) {
-        this.preferencesController.setSelectedAddress(addresses[0])
-      }
-    }
+    //   // if selected address not in the addresses, set to 0
+    //   const selectedAddress = this.preferencesController.getSelectedAddress()
+    //   console.log(`selectedAddress = ${selectedAddress}, addresses = ${addresses}`)
+    //   if (!addresses.includes(selectedAddress)) {
+    //     this.preferencesController.setSelectedAddress(addresses[0])
+    //   }
+    // }
 
     // This must be set as soon as possible to communicate to the
     // keyring's iframe and have the setting initialized properly
@@ -907,7 +907,7 @@ export default class MetamaskController extends EventEmitter {
     // Ledger Keyring GitHub downtime
     this.setLedgerLivePreference(
       this.preferencesController.getLedgerLivePreference(),
-    );
+    )
 
     return this.keyringController.fullUpdate()
   }
@@ -2138,21 +2138,21 @@ export default class MetamaskController extends EventEmitter {
    * Sets the Ledger Live preference to use for Ledger hardware wallet support
    * @param {bool} bool - the value representing if the users wants to use Ledger Live
    */
-    async setLedgerLivePreference(bool) {
-    const currentValue = this.preferencesController.getLedgerLivePreference();
-    this.preferencesController.setLedgerLivePreference(bool);
+  async setLedgerLivePreference(bool) {
+    const currentValue = this.preferencesController.getLedgerLivePreference()
+    this.preferencesController.setLedgerLivePreference(bool)
 
-    const keyring = await this.getKeyringForDevice('ledger');
+    const keyring = await this.getKeyringForDevice('ledger')
     if (keyring?.updateTransportMethod) {
       return keyring.updateTransportMethod(bool).catch((e) => {
         // If there was an error updating the transport, we should
         // fall back to the original value
-        this.preferencesController.setLedgerLivePreference(currentValue);
-        throw e;
-      });
+        this.preferencesController.setLedgerLivePreference(currentValue)
+        throw e
+      })
     }
 
-    return undefined;
+    return undefined
   }
 
   /**

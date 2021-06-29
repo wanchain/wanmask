@@ -1,3 +1,5 @@
+forked from [MetaMask/metamask-extension](https://github.com/metamask/metamask-extension/)
+
 # WanMask Browser Extension
 
 You can find the latest version of WanMask on [our official website](https://wanmask.io/). For help using WanMask, visit our [User Support Site](https://wanmask.zendesk.com/hc/en-us).

@@ -26,7 +26,7 @@ class AccountList extends Component {
     }
 
     setPath(pathValue) {
-      this.setState({ pathValue });
+      this.setState({ pathValue })
     }
 
     renderHdPathSelector () {
@@ -72,79 +72,79 @@ class AccountList extends Component {
             {this.context.t('selectAnAccount')}
           </h3>
           <p className="hw-connect__msg">
-          {this.context.t('selectAnAccountHelp')}
-          {this.context.t('selectAnAccountHelpDirections', [
-            <button
-              className="hw-connect__link"
-              onClick={() => this.setState({ showPopover: true })}
-              key="account-help"
-            >
-              {this.context.t('hardwareWalletSupportLinkConversion')}
-            </button>,
-          ])}
+            {this.context.t('selectAnAccountHelp')}
+            {this.context.t('selectAnAccountHelpDirections', [
+              <button
+                className="hw-connect__link"
+                onClick={() => this.setState({ showPopover: true })}
+                key="account-help"
+              >
+                {this.context.t('hardwareWalletSupportLinkConversion')}
+              </button>,
+            ])}
           </p>
         </div>
       )
     }
 
     renderAccounts () {
-      const { accounts, connectedAccounts } = this.props;
+      const { accounts, connectedAccounts } = this.props
 
       return (
         <div className="hw-account-list">
-         {accounts.map((account, idx) => {
-          const accountAlreadyConnected = connectedAccounts.includes(
-            account.address.toLowerCase(),
-          );
-          const value = account.index;
-          const checked =
-            this.props.selectedAccounts.includes(account.index) ||
-            accountAlreadyConnected;
+          {accounts.map((account, idx) => {
+            const accountAlreadyConnected = connectedAccounts.includes(
+              account.address.toLowerCase(),
+            );
+            const value = account.index;
+            const checked =
+              this.props.selectedAccounts.includes(account.index) ||
+              accountAlreadyConnected;
 
-          return (
-            <div
-              className="hw-account-list__item"
-              key={account.address}
-              title={
-                accountAlreadyConnected
-                  ? this.context.t('selectAnAccountAlreadyConnected')
-                  : ''
-              }
-            >
-              <div className="hw-account-list__item__checkbox">
-                <Checkbox
-                  id={`address-${idx}`}
-                  checked={checked}
-                  disabled={accountAlreadyConnected}
-                  onClick={() => {
-                    this.props.onAccountChange(value);
-                  }}
-                />
-                <label
-                  className="hw-account-list__item__label"
-                  htmlFor={`address-${idx}`}
-                >
-                  <span className="hw-account-list__item__index">
-                    {account.index + 1}
-                  </span>
-                  {`${account.address.slice(0, 4)}...${account.address.slice(
-                    -4,
-                  )}`}
-                  <span className="hw-account-list__item__balance">{`${account.balance}`}</span>
-                </label>
-              </div>
-              <a
-                className="hw-account-list__item__link"
-                href={getAccountLink(account.address, this.props.network)}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={this.context.t('etherscanView')}
+            return (
+              <div
+                className="hw-account-list__item"
+                key={account.address}
+                title={
+                  accountAlreadyConnected
+                    ? this.context.t('selectAnAccountAlreadyConnected')
+                    : ''
+                }
               >
-                <img src="images/popout.svg" alt="" />
-              </a>
-            </div>
-          );
-        })}
+                <div className="hw-account-list__item__checkbox">
+                  <Checkbox
+                    id={`address-${idx}`}
+                    checked={checked}
+                    disabled={accountAlreadyConnected}
+                    onClick={() => {
+                      this.props.onAccountChange(value);
+                    }}
+                  />
+                  <label
+                    className="hw-account-list__item__label"
+                    htmlFor={`address-${idx}`}
+                  >
+                    <span className="hw-account-list__item__index">
+                      {account.index + 1}
+                    </span>
+                    {`${account.address.slice(0, 4)}...${account.address.slice(
+                      -4,
+                    )}`}
+                    <span className="hw-account-list__item__balance">{`${account.balance}`}</span>
+                  </label>
+                </div>
+                <a
+                  className="hw-account-list__item__link"
+                  href={getAccountLink(account.address, this.props.network)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={this.context.t('etherscanView')}
+                >
+                  <img src="images/popout.svg" alt="" />
+                </a>
+              </div>
+            )
+          })}
         </div>
       )
     }
@@ -209,7 +209,7 @@ class AccountList extends Component {
     renderSelectPathPopover() {
       const { pathValue } = this.state
       const { onPathChange } = this.props
-  
+
       const footer = (
         <div className="switch-ledger-path-popover__footer">
           <Button
@@ -231,7 +231,7 @@ class AccountList extends Component {
           </Button>
         </div>
       )
-  
+
       return (
         <Popover
           title={this.context.t('switchLedgerPaths')}

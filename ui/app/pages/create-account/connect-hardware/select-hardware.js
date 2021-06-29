@@ -25,7 +25,7 @@ export default class SelectHardware extends Component {
     return null
   }
 
-  renderConnectToTrezorButton () {
+  renderConnectToTrezorButton() {
     return (
       <button
         className={classnames('hw-connect__btn', {
@@ -39,10 +39,10 @@ export default class SelectHardware extends Component {
           alt="Trezor"
         />
       </button>
-    )
+    );
   }
 
-  renderConnectToLedgerButton () {
+  renderConnectToLedgerButton() {
     return (
       <button
         className={classnames('hw-connect__btn', {
@@ -56,7 +56,7 @@ export default class SelectHardware extends Component {
           alt="Ledger"
         />
       </button>
-    )
+    );
   }
 
   renderButtons() {
@@ -67,7 +67,7 @@ export default class SelectHardware extends Component {
           {this.renderConnectToTrezorButton()}
         </div>
       </>
-    );
+    )
   }
 
   renderContinueButton() {
@@ -81,7 +81,7 @@ export default class SelectHardware extends Component {
       >
         {this.context.t('continue')}
       </Button>
-    );
+    )
   }
 
   renderUnsupportedBrowser() {
@@ -122,16 +122,16 @@ export default class SelectHardware extends Component {
   renderTutorialsteps() {
     switch (this.state.selectedDevice) {
       case 'ledger':
-        return this.renderLedgerTutorialSteps();
+        return this.renderLedgerTutorialSteps()
       case 'trezor':
-        return this.renderTrezorTutorialSteps();
+        return this.renderTrezorTutorialSteps()
       default:
-        return '';
+        return ''
     }
   }
 
   renderLedgerTutorialSteps() {
-    const steps = [];
+    const steps = []
     if (this.props.useLedgerLive) {
       steps.push({
         title: this.context.t('step1LedgerWallet'),
@@ -146,7 +146,7 @@ export default class SelectHardware extends Component {
             {this.context.t('ledgerLiveApp')}
           </a>,
         ]),
-      });
+      })
     }
 
     steps.push({
@@ -164,7 +164,7 @@ export default class SelectHardware extends Component {
           {this.context.t('hardwareWalletSupportLinkConversion')}
         </a>,
       ]),
-    });
+    })
 
     return (
       <div className="hw-tutorial">
@@ -183,7 +183,7 @@ export default class SelectHardware extends Component {
           </div>
         ))}
       </div>
-    );
+    )
   }
 
   renderTrezorTutorialSteps() {
@@ -204,7 +204,7 @@ export default class SelectHardware extends Component {
           </a>,
         ]),
       },
-    ];
+    ]
 
     return (
       <div className="hw-tutorial">
@@ -223,7 +223,7 @@ export default class SelectHardware extends Component {
           </div>
         ))}
       </div>
-    );
+    )
   }
 
   renderConnectScreen () {
