@@ -1096,10 +1096,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@buzhou/eth-ledger-bridge-keyring@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.npmjs.org/@buzhou/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.4.3.tgz#1834f889cf29141eb69c312cbe7a18d47e635040"
-  integrity sha512-/s3IO6eRstR9WQIsUWb2U2Am1Uc0WCdS/oFoDdjQXikmKF7wcyEJRKMrJsGLWG3pK5YJDlukES/gEGY7DH6pvg==
+"@buzhou/eth-ledger-bridge-keyring@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.npmjs.org/@buzhou/eth-ledger-bridge-keyring/-/eth-ledger-bridge-keyring-0.4.4.tgz#9f628f3643b71f203e06f2946d24d0f3c31a4caa"
+  integrity sha512-zMnfWOgZUJhqszfylKcMB+5OorjwW6NvrCoLualmJgVaqwxywQ8TVaENbEFJFOlrn0PUVafADgUydtHzEj3vaQ==
   dependencies:
     "@ethereumjs/tx" "^3.1.1"
     eth-sig-util "^1.4.2"
