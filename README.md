@@ -1,4 +1,4 @@
-forked from [MetaMask/metamask-extension](https://github.com/metamask/metamask-extension/)
+forked from [MetaMask/metamask-extension(v8.0.10)](https://github.com/metamask/metamask-extension/)
 
 # WanMask Browser Extension
 
