@@ -1,6 +1,6 @@
 # How to install WanMask locally
 
-WanMask is an extension for web browser (chrome). You can install it locally.
+WanMask is an extension for web browser (Chrome). You can install it locally.
 
 ## 1. Download the latest release
 
