@@ -12,7 +12,7 @@ You can see all release versions at [releases](https://github.com/wanchain/wanma
 
 E.g. download https://github.com/wanchain/wanmask/releases/download/v3.0.10/wanmask-chrome-3.0.10.zip
 
-## 2. Extract the zip file to a fold
+## 2. Extract the zip file to a folder
 
 ## 3. Remove your old wanmask extension from chrome
 
@@ -25,6 +25,6 @@ E.g. download https://github.com/wanchain/wanmask/releases/download/v3.0.10/wanm
 
 ### Goto "chrome://extensions"
 
-### Click "Load unpacked" button and select your new extract fold in step 2
+### Click "Load unpacked" button and select your new extract folder in step 2
 
 ## 5. Now you can use the new version wanmask
