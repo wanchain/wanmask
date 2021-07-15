@@ -4,7 +4,7 @@ WanMask is an extension for web browser (Chrome). You can install it locally.
 
 ## 1. Download the latest release
 
-You can see all releases on [releases](https://github.com/wanchain/wanmask/releases). Download the latest one.
+You can see all releases on [releases page](https://github.com/wanchain/wanmask/releases). Download the latest one.
 
 E.g. download https://github.com/wanchain/wanmask/releases/download/v3.0.10/wanmask-chrome-3.0.10.zip
 
